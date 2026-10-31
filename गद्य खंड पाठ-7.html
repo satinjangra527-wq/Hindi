@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="hi" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'जामुन का पेड़' - महत्वपूर्ण प्रश्नोत्तर अध्याय सामग्री</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Rozha One & Noto Sans Devanagari -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Rozha+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['"Rozha One"', 'serif'],
+                        hindi: ['"Noto Sans Devanagari"', 'sans-serif'],
+                        sans: ['Poppins', '"Noto Sans Devanagari"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+            color: #0f172a;
+            min-height: 100vh;
+        }
+
+        .heading-font {
+            font-family: 'Rozha One', 'Noto Sans Devanagari', serif;
+        }
+
+        /* Light Theme Glassmorphism Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 10px 35px -5px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+        }
+
+        .glass-badge {
+            background: rgba(254, 243, 199, 0.8);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: #b45309;
+        }
+
+        .glass-btn {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1.5px solid #f59e0b;
+            color: #92400e;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-btn:hover {
+            background: linear-gradient(135deg, #fde68a 100%, #fcd34d 100%);
+            border-color: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.2);
+        }
+
+        .light-subcard {
+            background: #ffffff;
+            border-left: 5px solid #dc2626;
+            border-top: 1px solid #f1f5f9;
+            border-right: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Custom Scrollbar */
+        .custom-scroll::-webkit-scrollbar {
+            width: 7px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Slide Transition Animations */
+        .slide-enter {
+            animation: slideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px) scale(0.99);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Toast Popup */
+        #toast {
+            transition: all 0.3s ease;
+            transform: translateY(80px);
+            opacity: 0;
+        }
+        #toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Pulse for Speech */
+        .speaking-pulse {
+            animation: pulse-ring 1.5s infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+        }
+    </style>
+</head>
+<body class="h-full flex flex-col justify-between select-none antialiased text-slate-800">
+
+    <!-- Top Navigation Header -->
+    <header class="w-full px-4 md:px-8 py-3.5 flex items-center justify-between border-b border-slate-200 bg-white/90 backdrop-blur-md z-30 sticky top-0 shadow-sm">
+        <div class="flex items-center gap-3 cursor-pointer" onclick="goToSlide(0)">
+            <div class="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center font-bold text-xl shadow-md shadow-red-200">
+                📚
+            </div>
+            <div>
+                <h1 class="text-lg md:text-xl font-extrabold text-slate-900 leading-none">
+                    'जामुन का पेड़'
+                </h1>
+                <p class="text-xs text-slate-500 font-medium hidden sm:block mt-1">कृष्ण चंदर | NCERT Class 11</p>
+            </div>
+        </div>
+
+        <!-- Toolbar Controls -->
+        <div class="flex items-center gap-2 md:gap-3">
+            
+            <!-- Speech Play/Pause Control -->
+            <button id="globalSpeechBtn" onclick="toggleSpeech()" title="पढ़कर सुनें / रोकें" class="flex items-center gap-2 px-3 py-1.5 bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 font-semibold rounded-xl text-xs md:text-sm transition">
+                <i class="fa-solid fa-volume-high text-red-600" id="speechBtnIcon"></i>
+                <span class="hidden sm:inline" id="speechBtnText">बोलकर सुनें</span>
+            </button>
+
+            <!-- Font Resizer -->
+            <div class="flex items-center bg-slate-100 rounded-xl p-1 border border-slate-200">
+                <button onclick="changeFontSize(-1)" title="अक्षर छोटे करें" class="px-2.5 py-1 text-xs font-bold text-slate-600 hover:bg-white rounded-lg transition">
+                    <i class="fa-solid fa-minus"></i> A
+                </button>
+                <span class="text-xs text-slate-300 px-0.5">|</span>
+                <button onclick="changeFontSize(1)" title="अक्षर बड़े करें" class="px-2.5 py-1 text-xs font-bold text-slate-600 hover:bg-white rounded-lg transition">
+                    A <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+
+            <!-- Jump Drawer Toggle -->
+            <button onclick="toggleDrawer()" title="सभी स्लाइड सूची" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl text-xs md:text-sm font-semibold text-slate-700 transition">
+                <i class="fa-solid fa-list-ol text-slate-600"></i>
+                <span class="hidden md:inline">स्लाइड सूची</span>
+            </button>
+
+            <!-- Auto-Play Toggle -->
+            <button id="autoplayBtn" onclick="toggleAutoplay()" title="ऑटो प्ले चालू/बंद" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl text-xs md:text-sm font-semibold text-slate-700 transition">
+                <i class="fa-solid fa-play text-emerald-600" id="playIcon"></i>
+                <span class="hidden md:inline ml-1" id="playText">ऑटो प्ले</span>
+            </button>
+
+            <!-- Fullscreen Toggle -->
+            <button onclick="toggleFullscreen()" title="फुलस्क्रीन" class="p-2 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl text-slate-700 transition">
+                <i class="fa-solid fa-expand" id="fullscreenIcon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Top Progress Bar -->
+    <div class="w-full bg-slate-200 h-1.5 relative overflow-hidden">
+        <div id="progressBar" class="h-full bg-red-600 transition-all duration-300 ease-out w-1/5"></div>
+    </div>
+
+    <!-- Main Slide Stage Area -->
+    <main class="flex-1 max-w-5xl w-full mx-auto px-4 py-4 md:py-6 flex flex-col justify-center relative z-10">
+
+        <!-- Slide Content Wrapper -->
+        <div id="slideContainer" class="w-full slide-enter">
+            <!-- Dynamic Content Injected via JavaScript -->
+        </div>
+
+    </main>
+
+    <!-- Footer Controls Bar -->
+    <footer class="w-full px-4 md:px-8 py-3.5 border-t border-slate-200 bg-white/95 backdrop-blur-md z-30 shadow-lg">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+            
+            <!-- Slide Counter Badge -->
+            <div class="flex items-center gap-3">
+                <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 border border-slate-200 text-slate-800" id="slideCounter">
+                    स्लाइड 1 / 5
+                </span>
+                <span class="text-xs text-slate-500 font-medium hidden sm:inline">
+                    <i class="fa-regular fa-keyboard mr-1 text-slate-400"></i> Left/Right Arrow से नेविगेट करें
+                </span>
+            </div>
+
+            <!-- Navigation Dots -->
+            <div class="flex items-center gap-2" id="dotsContainer">
+                <!-- Javascript populates dots -->
+            </div>
+
+            <!-- Navigation Action Buttons -->
+            <div class="flex items-center gap-2 md:gap-3">
+                <button onclick="copyCurrentSlideText()" class="p-2.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl text-slate-700 transition" title="सामग्री कॉपी करें">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+                <button onclick="prevSlide()" id="prevBtn" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 disabled:opacity-40 disabled:cursor-not-allowed border border-slate-200 rounded-xl text-slate-800 font-bold text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-chevron-left text-xs"></i> पीछे
+                </button>
+                <button onclick="nextSlide()" id="nextBtn" class="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl shadow-md shadow-red-200 transition flex items-center gap-2">
+                    आगे <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Side Slide Drawer Modal -->
+    <div id="drawer" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex justify-end">
+        <div class="w-full max-w-md bg-white h-full border-l border-slate-200 p-6 flex flex-col justify-between overflow-y-auto custom-scroll shadow-2xl">
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-slate-200 mb-5">
+                    <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-book-open text-red-600"></i> संपूर्ण स्लाइड सूची
+                    </h3>
+                    <button onclick="toggleDrawer()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="space-y-3" id="drawerList">
+                    <!-- Javascript populates drawer list -->
+                </div>
+            </div>
+            <div class="pt-4 border-t border-slate-200 text-xs text-slate-500 text-center font-medium">
+                'जामुन का पेड़' - कृष्ण चंदर (NCERT Class 11)
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white px-5 py-2.5 rounded-xl shadow-xl text-sm font-semibold flex items-center gap-2 border border-slate-700">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toastMessage">कॉपी हो गया!</span>
+    </div>
+
+    <!-- Presentation Engine JavaScript -->
+    <script>
+        // Untruncated Data (Slide 0: Cover Slide + 4 Question Slides)
+        const slidesData = [
+            // SLIDE 0: Cover Slide with Big Circular Image
+            {
+                type: "cover",
+                badge: "📚 NCERT Class 11 - महत्वपूर्ण प्रश्नोत्तर",
+                title: "'जामुन का पेड़'",
+                subtitle: "हास्य-व्यंग्य सम्राट कृष्ण चंदर की प्रसिद्ध कहानी पर आधारित संपूर्ण प्रश्न एवं विस्तृत उत्तर",
+                imgSrc: "कृष्ण चंदर.jpg", 
+                authorName: "लेखक: कृष्ण चंदर",
+                cards: [
+                    { icon: "🌳", title: "लाचार आदमी", desc: "पेड़ के नीचे दबा दफ्तर", titleColor: "text-amber-800" },
+                    { icon: "🏛️", title: "लालफीताशाही", desc: "सरकारी महकमों की संवेदनशून्यता", titleColor: "text-blue-800" },
+                    { icon: "✍️", title: "कवि-संस्कृति", desc: "हास्यास्पद फाइल यात्रा", titleColor: "text-emerald-800" }
+                ],
+                btnText: "प्रश्नोत्तर अध्ययन प्रारंभ करें ➔"
+            },
+            // SLIDE 1: Question 1
+            {
+                type: "qa",
+                qNum: "प्रश्न 1",
+                marks: "5 अंक",
+                badgeIcon: "🌳",
+                question: "बेचारा जामुन का पेड़। कितना फलदार था। और इसकी जामुनें कितनी रसीली होती थीं।\n\nक. ये संवाद कहानी के किस प्रसंग में आए हैं?\nख. इससे लोगों की कैसी मानसिकता का पता चलता है?",
+                sections: [
+                    {
+                        title: "क. संवाद का प्रसंग:",
+                        text: "यह संवाद उस समय सामने आता है जब सेक्रेटेरिएट के लॉन में एक भारी-भरकम जामुन का पेड़ गिर जाने के कारण उसके नीचे एक लाचार आदमी दब जाता है, और वहाँ इकट्ठा होने वाले लोग उस इंसान की जान बचाने के बजाय केवल उस पेड़ के फल और उसके गिरने पर चर्चा करने लगते हैं।"
+                    },
+                    {
+                        title: "ख. संवेदनहीन और स्वार्थी मानसिकता:",
+                        text: "इससे समाज और कार्यालय के कर्मचारियों की उस अत्यंत संवेदनहीन, अवसरवादी और स्वार्थी मानसिकता का पता चलता है जिन्हें इंसान की तड़प या उसकी जान से ज्यादा सिर्फ अपनी स्वादेंद्रियों और वस्तुओं के नष्ट होने का दुख होता है।"
+                    },
+                    {
+                        title: "मानवीय संवेदनाओं का पतन:",
+                        text: "यह संवाद इस बात को उजागर करता है कि किस प्रकार संवेदनशून्यता के इस दौर में लोगों के दिलों से मानवता बिल्कुल समाप्त हो चुकी है और वे किसी की जान बचाने के बजाय निर्जीव चीजों के प्रति अधिक लगाव दिखाते हैं।"
+                    }
+                ]
+            },
+            // SLIDE 2: Question 2
+            {
+                type: "qa",
+                qNum: "प्रश्न 2",
+                marks: "5 अंक",
+                badgeIcon: "✍️",
+                question: "दबा हुआ आदमी एक कवि है, यह बात कैसे पता चली और इस जानकारी का फ़ाइल की यात्रा पर क्या असर पड़ा?",
+                sections: [
+                    {
+                        title: "कवि होने की जानकारी मिलना:",
+                        text: "रात के समय जब माली उस दबे हुए आदमी को खाना खिलाने की कोशिश करता है और उससे हालचाल पूछता है, तब वह आदमी रोते हुए एक कविता की पंक्ति गुनगुनाता है, जिससे माली को पता चलता है कि वह कोई साधारण व्यक्ति नहीं बल्कि एक कवि है।"
+                    },
+                    {
+                        title: "कवि-संस्कृति सभा में फाइल का पहुँचना:",
+                        text: "जब यह बात माली द्वारा दफ्तर के बाबूओं और अधिकारियों तक पहुँचती है, तो फाइल तुरंत कृषि विभाग से निकलकर सांस्कृतिक विभाग या 'कवि-संस्कृति सभा' के पास भेज दी जाती है।"
+                    },
+                    {
+                        title: "अधिकारियों की संवेदनशीलता का दिखावा:",
+                        text: "फाइल पर तुरंत विचार शुरू हो जाता है और अधिकारी यह तय करने लगते हैं कि इस कवि की सुपुर्दगी किस विभाग के अधीन होनी चाहिए, जिससे सरकारी लालफीताशाही की एक अलग और हास्यास्पद तस्वीर सामने आती है।"
+                    }
+                ]
+            },
+            // SLIDE 3: Question 3
+            {
+                type: "qa",
+                qNum: "प्रश्न 3",
+                marks: "3 अंक",
+                badgeIcon: "🌿",
+                question: "कृषि-विभाग वालों ने मामले को हॉर्टिकल्चर विभाग को सौंपने के पीछे क्या तर्क दिया?",
+                sections: [
+                    {
+                        title: "विभाग के अधिकार क्षेत्र का बहाना:",
+                        text: "कृषि विभाग के अंडर-सेक्रेटरी ने यह तर्क दिया कि उनका विभाग केवल 'कृषि और पैदावार' (जैसे खेती-किसानी और अनाज) से जुड़े मामलों को देखता है, पेड़-पौधे और फलदार वृक्ष उनके अधिकार क्षेत्र में नहीं आते।"
+                    },
+                    {
+                        title: "हॉर्टिकल्चर (बागवानी) विभाग की जिम्मेदारी:",
+                        text: "उन्होंने फाइल पर यह टिप्पणी लिखकर आगे बढ़ा दी कि जामुन का पेड़ एक फलदार वृक्ष है, इसलिए इस पेड़ और इसके नीचे दबे हुए मामले से निपटने की असली जिम्मेदारी हॉर्टिकल्चर (बागवानी) विभाग की बनती है।"
+                    },
+                    {
+                        title: "जिम्मेदारी टालने की प्रवृत्ति:",
+                        text: "इस प्रकार कृषि विभाग के अधिकारियों ने संवेदनशीलता दिखाने के बजाय केवल कागजी कानूनी दांव-पेच और औपचारिकता का सहारा लेकर उस गंभीर मामले से अपनी जिम्मेदारी आसानी से झाड़ ली।"
+                    }
+                ]
+            },
+            // SLIDE 4: Question 4
+            {
+                type: "qa",
+                qNum: "प्रश्न 4",
+                marks: "5 अंक",
+                badgeIcon: "🏛️",
+                question: "इस पाठ में सरकार के किन-किन विभागों की चर्चा की गई है और पाठ से उनके कार्य के बारे में क्या अंदाज़ा मिलता है?",
+                sections: [
+                    {
+                        title: "कृषि विभाग और उसकी कार्यशैली:",
+                        text: "पाठ में सबसे पहले कृषि विभाग का जिक्र आता है, जिसका काम कागजी खानापूर्ति करना और अपनी जिम्मेदारी से बचने के लिए तुरंत फाइल को दूसरे विभागों की तरफ सरका देना है।"
+                    },
+                    {
+                        title: "हॉर्टिकल्चर (बागवानी) विभाग:",
+                        text: "इस विभाग का कार्यक्षेत्र पेड़-पौधों और फलों से जुड़ा माना गया है, लेकिन यहाँ के अधिकारी भी इंसानी जिंदगी बचाने के बजाय सिर्फ यह बहस करने में लगे रहते हैं कि पेड़ काटने से कानून टूटेगा या नहीं।"
+                    },
+                    {
+                        title: "मेडिकल (चिकित्सा) और फारेस्ट (वन) विभाग:",
+                        text: "चिकित्सा विभाग आपस में यह तय करने में उलझा रहता है कि ऑपरेशन फॉरेस्ट्री विभाग करेगा या मेडिकल विभाग, जिससे साफ पता चलता है कि सरकारी महकमे जनता की भलाई के प्रति पूरी तरह निकम्मे और असंवेदनशील हैं।"
+                    },
+                    {
+                        title: "सांस्कृतिक और विदेश विभाग:",
+                        text: "अंत में विदेश विभाग का जिक्र आता है जो प्रधानमंत्री के दौरे और अंतरराष्ट्रीय संबंधों को प्राथमिकता देता है, लेकिन एक गरीब लाचार नागरिक की जान की उन्हें कोई परवाह नहीं होती।"
+                    }
+                ]
+            }
+        ];
+
+        // Global State Variables
+        let currentIndex = 0;
+        let autoplayInterval = null;
+        let isAutoplay = false;
+        let currentFontSizeOffset = 0; // -1, 0, 1, 2
+        let isSpeaking = false;
+        let isSpeechPaused = false;
+        let speechSynth = window.speechSynthesis;
+        let speechUtterance = null;
+
+        // DOM Elements
+        const slideContainer = document.getElementById('slideContainer');
+        const slideCounter = document.getElementById('slideCounter');
+        const progressBar = document.getElementById('progressBar');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('dotsContainer');
+        const drawer = document.getElementById('drawer');
+        const drawerList = document.getElementById('drawerList');
+
+        // Font scaling lookup
+        const fontClasses = {
+            qTitle: ['text-base md:text-lg', 'text-lg md:text-xl', 'text-xl md:text-2xl', 'text-2xl md:text-3xl'],
+            subHead: ['text-xs md:text-sm', 'text-sm md:text-base', 'text-base md:text-lg', 'text-lg md:text-xl'],
+            bodyText: ['text-xs md:text-sm', 'text-sm md:text-base', 'text-base md:text-lg', 'text-lg md:text-xl']
+        };
+
+        // Initialize Slideshow
+        function init() {
+            renderSlide();
+            renderDots();
+            renderDrawerItems();
+            updateProgress();
+            setupTouchSwipe();
+
+            window.onbeforeunload = () => {
+                if (speechSynth) speechSynth.cancel();
+            };
+        }
+
+        // Render Slide Content
+        function renderSlide() {
+            stopSpeech(); // Stop speech on slide change
+
+            const data = slidesData[currentIndex];
+            slideContainer.className = "w-full slide-enter";
+
+            if (data.type === 'cover') {
+                // SLIDE 0: Cover Slide with Big Circular Image
+                slideContainer.innerHTML = `
+                    <div class="glass-card rounded-3xl p-6 md:p-8 text-center flex flex-col items-center justify-center min-h-[70vh] border-2 border-amber-300/60 shadow-xl relative overflow-hidden">
+                        
+                        <!-- Badge -->
+                        <div class="inline-block glass-badge px-8 py-2 rounded-full text-sm md:text-base font-bold mb-8 shadow-sm">
+                            ${data.badge}
+                        </div>
+
+                        <!-- Big Circular Author Image (w-72 h-72 md:w-80 md:h-80) -->
+                        <div class="mb-5 relative group">
+                            <div class="w-72 h-72 md:w-80 md:h-80 rounded-full p-1.5 bg-gradient-to-tr from-amber-400 to-red-500 shadow-xl flex items-center justify-center overflow-hidden">
+                                <img src="${data.imgSrc}" alt="${data.authorName}" class="w-full h-full object-cover rounded-full bg-slate-200">
+                            </div>
+                            <span class="absolute bottom-2 right-4 bg-red-600 text-white px-3 py-2 rounded-full font-bold shadow-md" style="font-size: 18px;">
+                                ${data.authorName}
+                            </span>
+                        </div>
+
+                        <!-- Main Title -->
+                        <h2 class="heading-font text-3xl md:text-5xl font-extrabold text-amber-700 mb-3 tracking-wide drop-shadow-sm leading-tight">
+                            ${data.title}
+                        </h2>
+
+                        <!-- Subtitle -->
+                        <p class="text-sm md:text-lg font-semibold text-slate-700 mb-6 max-w-2xl leading-relaxed">
+                            ${data.subtitle}
+                        </p>
+
+                        <!-- Feature Cards Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-2xl mb-6 text-left">
+                            ${data.cards.map(c => `
+                                <div class="bg-white/90 p-3 rounded-2xl border border-slate-200 shadow-sm flex items-center space-x-3 transition hover:shadow-md">
+                                    <span class="text-2xl">${c.icon}</span>
+                                    <div>
+                                        <div class="${c.titleColor} font-bold text-xs md:text-sm leading-tight">${c.title}</div>
+                                        <div class="text-[11px] text-slate-500 font-medium mt-0.5">${c.desc}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <!-- Action Start Button -->
+                        <button onclick="goToSlide(1)" class="glass-btn px-7 py-3 rounded-2xl text-amber-900 font-extrabold text-lg md:text-xl shadow-lg flex items-center gap-3 group">
+                            <span>${data.btnText}</span>
+                        </button>
+                    </div>
+                `;
+            } else {
+                // NORMAL QA SLIDES (1 to 4)
+                const fontIdx = currentFontSizeOffset + 1;
+
+                let answerHTML = data.sections.map((sec) => `
+                    <div class="light-subcard p-4 md:p-5 rounded-2xl relative transition-all duration-200 hover:shadow-md">
+                        <h4 class="font-bold text-red-700 mb-2 flex items-start gap-2 ${fontClasses.subHead[fontIdx]}">
+                            <span class="inline-block mt-0.5 text-red-600">•</span>
+                            <span>${sec.title}</span>
+                        </h4>
+                        <p class="text-slate-800 font-medium leading-relaxed ${fontClasses.bodyText[fontIdx]} pl-4">
+                            ${sec.text}
+                        </p>
+                    </div>
+                `).join('');
+
+                slideContainer.innerHTML = `
+                    <div class="glass-card rounded-3xl p-5 md:p-8 relative overflow-hidden">
+                        
+                        <!-- Header Bar inside Slide -->
+                        <div class="flex flex-wrap items-center justify-between gap-3 mb-5 pb-4 border-b border-slate-200">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">${data.badgeIcon}</span>
+                                <span class="px-4 py-1.5 rounded-xl font-extrabold text-red-700 bg-red-50 border border-red-200 text-sm tracking-wide">
+                                    ${data.qNum}
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <button onclick="toggleSpeech()" class="px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition">
+                                    <i class="fa-solid ${isSpeaking ? 'fa-pause' : 'fa-volume-high'}" id="cardAudioIcon"></i>
+                                    <span id="cardAudioText">${isSpeaking ? 'रुकें' : 'सुनें'}</span>
+                                </button>
+
+                                <div class="px-3.5 py-1.5 rounded-xl font-bold text-xs md:text-sm bg-blue-50 text-blue-800 border border-blue-200">
+                                    <i class="fa-solid fa-award mr-1"></i>अंक: ${data.marks}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question Box -->
+                        <div class="mb-5 bg-slate-50 p-5 md:p-6 rounded-2xl border border-slate-200 shadow-inner">
+                            <h2 class="font-extrabold text-slate-900 leading-snug whitespace-pre-line ${fontClasses.qTitle[fontIdx]}">
+                                ${data.question}
+                            </h2>
+                        </div>
+
+                        <!-- Answer Heading -->
+                        <div class="flex items-center gap-2 mb-3 text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wider">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-600"></span>
+                            <span>उत्तर (विस्तार से):</span>
+                        </div>
+
+                        <!-- Answer Sub-cards -->
+                        <div class="space-y-4 max-h-[44vh] overflow-y-auto pr-2 custom-scroll">
+                            ${answerHTML}
+                        </div>
+
+                    </div>
+                `;
+            }
+
+            // Update Counter & Controls
+            slideCounter.innerText = `स्लाइड ${currentIndex + 1} / ${slidesData.length}`;
+            prevBtn.disabled = currentIndex === 0;
+
+            if (currentIndex === slidesData.length - 1) {
+                nextBtn.innerHTML = `पुनः देखें <i class="fa-solid fa-rotate-right text-xs"></i>`;
+            } else {
+                nextBtn.innerHTML = `आगे <i class="fa-solid fa-chevron-right text-xs"></i>`;
+            }
+
+            updateDots();
+            updateProgress();
+        }
+
+        // Text-To-Speech Engine (Hindi hi-IN)
+        function toggleSpeech() {
+            if (!('speechSynthesis' in window)) {
+                showToast("आपका ब्राउज़र वॉइस वाचन का समर्थन नहीं करता है।");
+                return;
+            }
+
+            if (isSpeaking) {
+                if (isSpeechPaused) {
+                    speechSynth.resume();
+                    isSpeechPaused = false;
+                    updateSpeechUI(true, "पढ़ रहे हैं...");
+                } else {
+                    speechSynth.pause();
+                    isSpeechPaused = true;
+                    updateSpeechUI(true, "रुक गए हैं");
+                }
+            } else {
+                startSpeech();
+            }
+        }
+
+        function startSpeech() {
+            speechSynth.cancel();
+
+            const data = slidesData[currentIndex];
+            let fullText = "";
+
+            if (data.type === 'cover') {
+                fullText = `${data.title}. ${data.subtitle}. ${data.badge}. `;
+                data.cards.forEach(c => { fullText += `${c.title}, ${c.desc}. `; });
+            } else {
+                fullText = `${data.qNum}. ${data.question}. उत्तर: `;
+                data.sections.forEach(sec => {
+                    fullText += `${sec.title} ${sec.text}. `;
+                });
+            }
+
+            speechUtterance = new SpeechSynthesisUtterance(fullText);
+            speechUtterance.lang = 'hi-IN';
+            speechUtterance.rate = 0.95;
+            speechUtterance.pitch = 1.0;
+
+            const voices = speechSynth.getVoices();
+            const hindiVoice = voices.find(v => v.lang.includes('hi') || v.lang.includes('HI'));
+            if (hindiVoice) {
+                speechUtterance.voice = hindiVoice;
+            }
+
+            speechUtterance.onstart = () => {
+                isSpeaking = true;
+                isSpeechPaused = false;
+                updateSpeechUI(true, "सुन रहे हैं");
+            };
+
+            speechUtterance.onend = () => {
+                isSpeaking = false;
+                isSpeechPaused = false;
+                updateSpeechUI(false, "बोलकर सुनें");
+            };
+
+            speechUtterance.onerror = () => {
+                isSpeaking = false;
+                isSpeechPaused = false;
+                updateSpeechUI(false, "बोलकर सुनें");
+            };
+
+            speechSynth.speak(speechUtterance);
+        }
+
+        function stopSpeech() {
+            if (speechSynth) speechSynth.cancel();
+            isSpeaking = false;
+            isSpeechPaused = false;
+            updateSpeechUI(false, "बोलकर सुनें");
+        }
+
+        function updateSpeechUI(speaking, textLabel) {
+            const btnIcon = document.getElementById('speechBtnIcon');
+            const btnText = document.getElementById('speechBtnText');
+            const cardIcon = document.getElementById('cardAudioIcon');
+            const cardText = document.getElementById('cardAudioText');
+            const globalBtn = document.getElementById('globalSpeechBtn');
+
+            if (speaking && !isSpeechPaused) {
+                if (btnIcon) btnIcon.className = "fa-solid fa-pause text-red-600 animate-pulse";
+                if (btnText) btnText.innerText = "रोकें";
+                if (cardIcon) cardIcon.className = "fa-solid fa-pause";
+                if (cardText) cardText.innerText = "रोकें";
+                if (globalBtn) globalBtn.classList.add('speaking-pulse', 'border-red-500');
+            } else {
+                if (btnIcon) btnIcon.className = "fa-solid fa-volume-high text-red-600";
+                if (btnText) btnText.innerText = textLabel || "बोलकर सुनें";
+                if (cardIcon) cardIcon.className = "fa-solid fa-volume-high";
+                if (cardText) cardText.innerText = "सुनें";
+                if (globalBtn) globalBtn.classList.remove('speaking-pulse', 'border-red-500');
+            }
+        }
+
+        // Navigation Functions
+        function nextSlide() {
+            if (currentIndex < slidesData.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // Loop back to Cover
+            }
+            renderSlide();
+        }
+
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderSlide();
+            }
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            renderSlide();
+            if (!drawer.classList.contains('pointer-events-none')) {
+                toggleDrawer();
+            }
+        }
+
+        // Render Dots
+        function renderDots() {
+            dotsContainer.innerHTML = slidesData.map((_, idx) => `
+                <button onclick="goToSlide(${idx})" title="${idx === 0 ? 'कवर पेज' : 'स्लाइड ' + idx}" class="w-3 h-3 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-red-600 w-8 shadow-sm' : 'bg-slate-300 hover:bg-slate-400'}">
+                </button>
+            `).join('');
+        }
+
+        function updateDots() {
+            renderDots();
+        }
+
+        function updateProgress() {
+            const percentage = ((currentIndex + 1) / slidesData.length) * 100;
+            progressBar.style.width = `${percentage}%`;
+        }
+
+        // Drawer Menu Render
+        function renderDrawerItems() {
+            drawerList.innerHTML = slidesData.map((item, idx) => {
+                if (item.type === 'cover') {
+                    return `
+                        <div onclick="goToSlide(0)" class="p-3.5 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-200 cursor-pointer transition flex items-center gap-3 group">
+                            <span class="px-2.5 py-1 rounded-lg bg-amber-200 text-amber-900 font-extrabold text-xs shrink-0">
+                                कवर
+                            </span>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-xs md:text-sm font-bold text-amber-900 group-hover:text-amber-950">
+                                    'जामुन का पेड़' - मुख्य पृष्ठ
+                                </p>
+                            </div>
+                        </div>
+                    `;
+                }
+                return `
+                    <div onclick="goToSlide(${idx})" class="p-3.5 rounded-xl bg-slate-50 hover:bg-red-50/60 border border-slate-200 cursor-pointer transition flex items-start gap-3 group">
+                        <span class="px-2.5 py-1 rounded-lg bg-red-100 text-red-700 font-extrabold text-xs shrink-0 border border-red-200">
+                            ${idx}
+                        </span>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-xs md:text-sm font-bold text-slate-800 group-hover:text-red-700 line-clamp-2 leading-snug">
+                                ${item.qNum}
+                            </p>
+                            <p class="text-[11px] text-slate-500 font-semibold mt-1">
+                                प्रकार: ${item.marks}
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function toggleDrawer() {
+            if (drawer.classList.contains('pointer-events-none')) {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        // Font Resize
+        function changeFontSize(delta) {
+            const newOffset = currentFontSizeOffset + delta;
+            if (newOffset >= -1 && newOffset <= 2) {
+                currentFontSizeOffset = newOffset;
+                renderSlide();
+                const labels = { '-1': 'छोटा', '0': 'सामान्य', '1': 'बड़ा', '2': 'बहुत बड़ा' };
+                showToast(`अक्षर आकार: ${labels[newOffset]}`);
+            }
+        }
+
+        // Auto-Play Feature
+        function toggleAutoplay() {
+            const playIcon = document.getElementById('playIcon');
+            const playText = document.getElementById('playText');
+            const autoplayBtn = document.getElementById('autoplayBtn');
+
+            if (isAutoplay) {
+                clearInterval(autoplayInterval);
+                isAutoplay = false;
+                playIcon.className = "fa-solid fa-play text-emerald-600";
+                playText.innerText = "ऑटो प्ले";
+                autoplayBtn.classList.remove('border-emerald-500', 'bg-emerald-50');
+                showToast("ऑटो प्ले बंद किया गया");
+            } else {
+                isAutoplay = true;
+                playIcon.className = "fa-solid fa-pause text-amber-600";
+                playText.innerText = "रुकें";
+                autoplayBtn.classList.add('border-emerald-500', 'bg-emerald-50');
+                showToast("ऑटो प्ले चालू (प्रत्येक 8 सेकंड)");
+                autoplayInterval = setInterval(() => {
+                    nextSlide();
+                }, 8000);
+            }
+        }
+
+        // Fullscreen Toggle
+        function toggleFullscreen() {
+            const icon = document.getElementById('fullscreenIcon');
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(() => {
+                    showToast("फुलस्क्रीन मोड समर्थित नहीं है");
+                });
+                icon.className = "fa-solid fa-compress";
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                    icon.className = "fa-solid fa-expand";
+                }
+            }
+        }
+
+        // Copy Text Function
+        function copyCurrentSlideText() {
+            const data = slidesData[currentIndex];
+            let textToCopy = "";
+
+            if (data.type === 'cover') {
+                textToCopy = `${data.title}\n${data.subtitle}\n${data.badge}\n`;
+            } else {
+                textToCopy = `${data.qNum} (${data.marks})\n${data.question}\n\n`;
+                textToCopy += `उत्तर:\n`;
+                data.sections.forEach(sec => {
+                    textToCopy += `\n${sec.title}\n${sec.text}\n`;
+                });
+            }
+
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast("सामग्री कॉपी हो गई है!");
+            } catch (err) {
+                showToast("कॉपी करने में असमर्थ");
+            }
+            document.body.removeChild(textarea);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2400);
+        }
+
+        // Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'f' || e.key === 'F') {
+                toggleFullscreen();
+            } else if (e.key === 'Escape') {
+                if (!drawer.classList.contains('pointer-events-none')) {
+                    toggleDrawer();
+                }
+            }
+        });
+
+        // Touch Swipe
+        function setupTouchSwipe() {
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    nextSlide();
+                }
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    prevSlide();
+                }
+            }
+        }
+
+        // Pre-fetch voices
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = () => {
+                window.speechSynthesis.getVoices();
+            };
+        }
+
+        // Start Application
+        window.onload = init;
+    </script>
+</body>
+</html>

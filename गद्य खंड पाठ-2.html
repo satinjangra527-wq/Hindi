@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="hi" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'मियाँ नसीरुद्दीन' - महत्वपूर्ण प्रश्नोत्तर अध्याय सामग्री</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Rozha One & Noto Sans Devanagari -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Rozha+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['"Rozha One"', 'serif'],
+                        hindi: ['"Noto Sans Devanagari"', 'sans-serif'],
+                        sans: ['Poppins', '"Noto Sans Devanagari"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+            color: #0f172a;
+            min-height: 100vh;
+        }
+
+        .heading-font {
+            font-family: 'Rozha One', 'Noto Sans Devanagari', serif;
+        }
+
+        /* Light Theme Glassmorphism Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 10px 35px -5px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+        }
+
+        .glass-badge {
+            background: rgba(254, 243, 199, 0.8);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: #b45309;
+        }
+
+        .glass-btn {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1.5px solid #f59e0b;
+            color: #92400e;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-btn:hover {
+            background: linear-gradient(135deg, #fde68a 100%, #fcd34d 100%);
+            border-color: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.2);
+        }
+
+        .light-subcard {
+            background: #ffffff;
+            border-left: 5px solid #dc2626;
+            border-top: 1px solid #f1f5f9;
+            border-right: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Custom Scrollbar */
+        .custom-scroll::-webkit-scrollbar {
+            width: 7px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Slide Transition Animations */
+        .slide-enter {
+            animation: slideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px) scale(0.99);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Toast Popup */
+        #toast {
+            transition: all 0.3s ease;
+            transform: translateY(80px);
+            opacity: 0;
+        }
+        #toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Pulse for Speech */
+        .speaking-pulse {
+            animation: pulse-ring 1.5s infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+        }
+    </style>
+</head>
+<body class="h-full flex flex-col justify-between select-none antialiased text-slate-800">
+
+    <!-- Top Navigation Header -->
+    <header class="w-full px-4 md:px-8 py-3.5 flex items-center justify-between border-b border-slate-200 bg-white/90 backdrop-blur-md z-30 sticky top-0 shadow-sm">
+        <div class="flex items-center gap-3 cursor-pointer" onclick="goToSlide(0)">
+            <div class="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center font-bold text-xl shadow-md shadow-red-200">
+                📚
+            </div>
+            <div>
+                <h1 class="text-lg md:text-xl font-extrabold text-slate-900 leading-none">
+                    'मियाँ नसीरुद्दीन'
+                </h1>
+                <p class="text-xs text-slate-500 font-medium hidden sm:block mt-1">कृष्णा सोबती | NCERT Class 11</p>
+            </div>
+        </div>
+
+        <!-- Toolbar Controls -->
+        <div class="flex items-center gap-2 md:gap-3">
+            
+            <!-- Speech Play/Pause Control -->
+            <button id="globalSpeechBtn" onclick="toggleSpeech()" title="पढ़कर सुनें / रोकें" class="flex items-center gap-2 px-3 py-1.5 bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 font-semibold rounded-xl text-xs md:text-sm transition">
+                <i class="fa-solid fa-volume-high text-red-600" id="speechBtnIcon"></i>
+                <span class="hidden sm:inline" id="speechBtnText">बोलकर सुनें</span>
+            </button>
+
+            <!-- Font Resizer -->
+            <div class="flex items-center bg-slate-100 rounded-xl p-1 border border-slate-200">
+                <button onclick="changeFontSize(-1)" title="अक्षर छोटे करें" class="px-2.5 py-1 text-xs font-bold text-slate-600 hover:bg-white rounded-lg transition">
+                    <i class="fa-solid fa-minus"></i> A
+                </button>
+                <span class="text-xs text-slate-300 px-0.5">|</span>
+                <button onclick="changeFontSize(1)" title="अक्षर बड़े करें" class="px-2.5 py-1 text-xs font-bold text-slate-600 hover:bg-white rounded-lg transition">
+                    A <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+
+            <!-- Jump Drawer Toggle -->
+            <button onclick="toggleDrawer()" title="सभी स्लाइड सूची" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl text-xs md:text-sm font-semibold text-slate-700 transition">
+                <i class="fa-solid fa-list-ol text-slate-600"></i>
+                <span class="hidden md:inline">स्लाइड सूची</span>
+            </button>
+
+            <!-- Auto-Play Toggle -->
+            <button id="autoplayBtn" onclick="toggleAutoplay()" title="ऑटो प्ले चालू/बंद" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl text-xs md:text-sm font-semibold text-slate-700 transition">
+                <i class="fa-solid fa-play text-emerald-600" id="playIcon"></i>
+                <span class="hidden md:inline ml-1" id="playText">ऑटो प्ले</span>
+            </button>
+
+            <!-- Fullscreen Toggle -->
+            <button onclick="toggleFullscreen()" title="फुलस्क्रीन" class="p-2 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl text-slate-700 transition">
+                <i class="fa-solid fa-expand" id="fullscreenIcon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Top Progress Bar -->
+    <div class="w-full bg-slate-200 h-1.5 relative overflow-hidden">
+        <div id="progressBar" class="h-full bg-red-600 transition-all duration-300 ease-out w-1/6"></div>
+    </div>
+
+    <!-- Main Slide Stage Area -->
+    <main class="flex-1 max-w-5xl w-full mx-auto px-4 py-4 md:py-6 flex flex-col justify-center relative z-10">
+
+        <!-- Slide Content Wrapper -->
+        <div id="slideContainer" class="w-full slide-enter">
+            <!-- Dynamic Content Injected via JavaScript -->
+        </div>
+
+    </main>
+
+    <!-- Footer Controls Bar -->
+    <footer class="w-full px-4 md:px-8 py-3.5 border-t border-slate-200 bg-white/95 backdrop-blur-md z-30 shadow-lg">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+            
+            <!-- Slide Counter Badge -->
+            <div class="flex items-center gap-3">
+                <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 border border-slate-200 text-slate-800" id="slideCounter">
+                    स्लाइड 1 / 6
+                </span>
+                <span class="text-xs text-slate-500 font-medium hidden sm:inline">
+                    <i class="fa-regular fa-keyboard mr-1 text-slate-400"></i> Left/Right Arrow से नेविगेट करें
+                </span>
+            </div>
+
+            <!-- Navigation Dots -->
+            <div class="flex items-center gap-2" id="dotsContainer">
+                <!-- Javascript populates dots -->
+            </div>
+
+            <!-- Navigation Action Buttons -->
+            <div class="flex items-center gap-2 md:gap-3">
+                <button onclick="copyCurrentSlideText()" class="p-2.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl text-slate-700 transition" title="सामग्री कॉपी करें">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+                <button onclick="prevSlide()" id="prevBtn" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 disabled:opacity-40 disabled:cursor-not-allowed border border-slate-200 rounded-xl text-slate-800 font-bold text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-chevron-left text-xs"></i> पीछे
+                </button>
+                <button onclick="nextSlide()" id="nextBtn" class="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl shadow-md shadow-red-200 transition flex items-center gap-2">
+                    आगे <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Side Slide Drawer Modal -->
+    <div id="drawer" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex justify-end">
+        <div class="w-full max-w-md bg-white h-full border-l border-slate-200 p-6 flex flex-col justify-between overflow-y-auto custom-scroll shadow-2xl">
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-slate-200 mb-5">
+                    <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-book-open text-red-600"></i> संपूर्ण स्लाइड सूची
+                    </h3>
+                    <button onclick="toggleDrawer()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="space-y-3" id="drawerList">
+                    <!-- Javascript populates drawer list -->
+                </div>
+            </div>
+            <div class="pt-4 border-t border-slate-200 text-xs text-slate-500 text-center font-medium">
+                'मियाँ नसीरुद्दीन' - कृष्णा सोबती (NCERT Class 11)
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white px-5 py-2.5 rounded-xl shadow-xl text-sm font-semibold flex items-center gap-2 border border-slate-700">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toastMessage">कॉपी हो गया!</span>
+    </div>
+
+    <!-- Presentation Engine JavaScript -->
+    <script>
+        // Data (Slide 0: Cover Slide + 5 Question Slides, Total 6 Slides)
+        const slidesData = [
+            // SLIDE 0: Cover Slide with Big Circular Image
+            {
+                type: "cover",
+                badge: "📚 NCERT Class 11 - महत्वपूर्ण प्रश्नोत्तर",
+                title: "'मियाँ नसीरुद्दीन'",
+                subtitle: "लेखिका कृष्णा सोबती की प्रसिद्ध शब्दचित्र रेखाचित्र पर आधारित संपूर्ण प्रश्न एवं विस्तृत उत्तर",
+                imgSrc: "कृष्णा सोबती.jpg", 
+                authorName: "लेखिका: कृष्णा सोबती",
+                cards: [
+                    { icon: "🥖", title: "नानबाइयों के मसीहा", desc: "छब्बीस प्रकार की रोटियाँ", titleColor: "text-amber-800" },
+                    { icon: "🎙️", title: "रोचक साक्षात्कार", desc: "हुनर और कला की परख", titleColor: "text-blue-800" },
+                    { icon: "📜", title: "शाही अंदाज़-ए-बयाँ", desc: "खानदानी परंपरा का अभिमान", titleColor: "text-emerald-800" }
+                ],
+                btnText: "प्रश्नोत्तर अध्ययन प्रारंभ करें ➔"
+            },
+            // SLIDE 1: Question 1
+            {
+                type: "qa",
+                qNum: "प्रश्न 1",
+                marks: "3 अंक",
+                badgeIcon: "🥖",
+                question: "मियाँ नसीरुद्दीन को नानबाइयों का मसीहा क्यों कहा गया है?",
+                sections: [
+                    {
+                        title: "खानदानी पेशे का अनूठा संरक्षण:",
+                        text: "मियाँ नसीरुद्दीन अपने पुरखों के खानदानी पेशे यानी तरह-तरह की स्वादिष्ट और प्रकार की रोटियाँ बनाने के हुनर को पूरी शान, तल्लीनता और आत्मीयता के साथ आज के समय में भी जीवित रखे हुए हैं।"
+                    },
+                    {
+                        title: "हुनर और महारत के उस्ताद:",
+                        text: "उन्हें छब्बीस प्रकार की अलग-अलग रोटियाँ बनाने की अद्वितीय महारत हासिल है, जो उन्हें इस कला से जुड़े अन्य साधारण कारीगरों और नानबाइयों से बिल्कुल अलग और श्रेष्ठ साबित करती है।"
+                    },
+                    {
+                        title: "मसीहाई अंदाज़ व पहचान:",
+                        text: "वे अपने इस पारंपरिक काम को केवल रोजी-रोटी का जरिया नहीं मानते, बल्कि कला साधना मानते हैं; इसीलिए वे अपने मझाए हुए अनुभव और दबंग तेवर के कारण सभी नानबाइयों के मसीहा कहलाते हैं।"
+                    }
+                ]
+            },
+            // SLIDE 2: Question 2
+            {
+                type: "qa",
+                qNum: "प्रश्न 2",
+                marks: "3 अंक",
+                badgeIcon: "🎙️",
+                question: "लेखिका मियाँ नसीरुद्दीन के पास क्यों गई थीं?",
+                sections: [
+                    {
+                        title: "रोचक साक्षात्कार (Interview) की तलाश:",
+                        text: "लेखिका कृष्णा सोबती मियाँ नसीरुद्दीन के पास उनका एक अत्यंत दिलचस्प और अनूठा साक्षात्कार लेने के उद्देश्य से गई थीं ताकि उनके जीवन के अनुभवों को जाना जा सके।"
+                    },
+                    {
+                        title: "पारंपरिक हुनर की गहराई जानना:",
+                        text: "लेखिका मियाँ जी के उस मसीहाई अंदाज़, उनके खानदानी पेशे के इतिहास तथा उनके द्वारा विभिन्न प्रकार की रोटियाँ बनाने की गुप्त कला के बारे में प्रत्यक्ष जानकारी प्राप्त करना चाहती थीं।"
+                    },
+                    {
+                        title: "जीवंत शब्दचित्र उकेरना:",
+                        text: "लेखिका का मुख्य उद्देश्य उनके अनूठे व्यक्तित्व, उनके शालीन रहन-सहन और उनके पुराने दौर के अंदाज़-ए-बयाँ को अपने पाठकों के सामने एक जीवंत शब्दचित्र के रूप में प्रस्तुत करना था।"
+                    }
+                ]
+            },
+            // SLIDE 3: Question 3
+            {
+                type: "qa",
+                qNum: "प्रश्न 3",
+                marks: "3 अंक",
+                badgeIcon: "📜",
+                question: "बादशाह के नाम का प्रसंग आते ही लेखिका की बातों में मियाँ नसीरुद्दीन की दिलचस्पी क्यों खत्म होने लगी?",
+                sections: [
+                    {
+                        title: "झूठ और डींगों का पोल खुलना:",
+                        text: "मियाँ नसीरुद्दीन पहले बड़े-बड़े दावे कर रहे थे कि उन्होंने किसी महान बादशाह के यहाँ शाही अंदाज़ में पकवान बनाए थे, लेकिन जब लेखिका ने उस बादशाह का सटीक नाम या समय पूछा, तो वे सच नहीं बता पाए।"
+                    },
+                    {
+                        title: "ऐतिहासिक तथ्यों और प्रमाणों की कमी:",
+                        text: "मियाँ जी केवल सुनी-सुनाई और बढ़ा-चढ़ाकर बातें कर रहे थे, असलियत में उनके पास उस शाही फरमान या बादशाह के दरबार से जुड़े होने का कोई पुख्ता ऐतिहासिक प्रमाण या विवरण नहीं था।"
+                    },
+                    {
+                        title: "झल्लाहट और असहजता की स्थिति:",
+                        text: "अपनी पोल खुलने और पकड़े जाने के डर से मियाँ नसीरुद्दीन असहज हो गए और उन्होंने अपनी कमजोरी छिपाने के लिए लेखिका के सवालों में अपनी दिलचस्पी कम कर दी तथा टाल-मटोल करने लगे।"
+                    }
+                ]
+            },
+            // SLIDE 4: Question 4
+            {
+                type: "qa",
+                qNum: "प्रश्न 4",
+                marks: "5 अंक",
+                badgeIcon: "⚡",
+                question: "\"मियाँ नसीरुद्दीन के चेहरे पर किसी दबे हुए अंधड़ के आसार देख यह मज़मून न छेड़ने का फैसला किया\" – इस कथन के पहले और बाद के प्रसंग का उल्लेख करते हुए इसे स्पष्ट कीजिए।",
+                sections: [
+                    {
+                        title: "कथन से पहले का प्रसंग:",
+                        text: "इस कथन से ठीक पहले लेखिका मियाँ नसीरुद्दीन से उनके बुजुर्गों और उस प्रसिद्ध बादशाह के बारे में बार-बार कड़े सवाल पूछ रही थी जिसके यहाँ उनके खानदान ने शाही नौकरी की थी।"
+                    },
+                    {
+                        title: "तनाव और गुस्से की स्थिति:",
+                        text: "जब लेखिका ने बादशाह का नाम या उससे जुड़ा पक्का सच जानना चाहा, तो मियाँ जी के पास कोई सटीक जवाब नहीं था, जिससे वे अंदर ही अंदर बहुत गुस्सा और असहज हो गए।"
+                    },
+                    {
+                        title: "चेहरे के बदलते हुए हाव-भाव:",
+                        text: "मियाँ जी के तेवर पूरी तरह बदलने लगे, उनके माथे पर तनाव और गुस्से के बल पड़ने लगे तथा उनका मिजाज गर्म होने लगे, जिसे लेखिका ने बहुत करीब से भाँप लिया।"
+                    },
+                    {
+                        title: "कथन के बाद का प्रसंग:",
+                        text: "स्थिति की नजाकत और मियाँ जी के गुस्से को समझते हुए लेखिका ने आगे और तीखे सवाल पूछने का इरादा तुरंत छोड़ दिया और मियाँ जी को और अधिक नाराज़ करना उचित नहीं समझा।"
+                    },
+                    {
+                        title: "विषय परिवर्तन की कूटनीति:",
+                        text: "माहौल को शांत रखने और तनाव को टालने के लिए लेखिका ने बातचीत का रुख मोड़ दिया और मियाँ जी के कामगार कारीगरों (शागिर्दों) के सामान्य कामकाज के बारे में पूछना शुरू कर दिया।"
+                    }
+                ]
+            },
+            // SLIDE 5: Question 5
+            {
+                type: "qa",
+                qNum: "प्रश्न 5",
+                marks: "5 अंक",
+                badgeIcon: "🎨",
+                question: "पाठ में मियाँ नसीरुद्दीन का शब्दचित्र लेखिका ने कैसे खींचा है?",
+                sections: [
+                    {
+                        title: "शारीरिक बनावट और परिवेश का चित्रण:",
+                        text: "लेखिका ने मियाँ नसीरुद्दीन के व्यक्तित्व का सजीव चित्रण करते हुए बताया कि वे मटियामहल की अंधेरी गलियों में झाँझरी पर बैठे थे, उम्र के ढलान पर थे और उनके चेहरे पर उम्र का लंबा अनुभव साफ झलकता था।"
+                    },
+                    {
+                        title: "बातचीत का खास और दबंग अंदाज़:",
+                        text: "उनका बात करने का अनूठा, रोबदार और तंज कसने वाला तरीका तथा हर बात पर सिर हिलाकर तार्किक जवाब देने का अंदाज़ उनके जीवंत और प्रभावशाली चरित्र को उभारता है।"
+                    },
+                    {
+                        title: "मसीहाई तेवर और पहनावा:",
+                        text: "उनके काम करने के तौर-तरीके, आँखों के तेज और अपने खानदानी हुनर के प्रति उनके गहरे आत्मविश्वास व अभिमान को लेखिका ने शब्दों के माध्यम से पाठकों के सामने एकदम जीवंत कर दिया है।"
+                    },
+                    {
+                        title: "कारीगरों पर उनका कड़ा अनुशासन:",
+                        text: "मियाँ जी अपनी दुकान पर काम करने वाले शागिर्दों (कारीगरों) को किस प्रकार तालीम देते थे और गलती करने पर कैसे डाँटते थे, इसका बहुत ही सजीव खाका खींचा गया है।"
+                    },
+                    {
+                        title: "अनुभव की चमक:",
+                        text: "उनके पूरे व्यक्तित्व में पुराने समय के शाही बावर्चीखाने की खुशबू और अपने पेशे के प्रति जो समर्पण दिखाई देता है, वही उनके शब्दचित्र को सबसे अलग और यादगार बनाता है।"
+                    }
+                ]
+            }
+        ];
+
+        // Global State Variables
+        let currentIndex = 0;
+        let autoplayInterval = null;
+        let isAutoplay = false;
+        let currentFontSizeOffset = 0; // -1, 0, 1, 2
+        let isSpeaking = false;
+        let isSpeechPaused = false;
+        let speechSynth = window.speechSynthesis;
+        let speechUtterance = null;
+
+        // DOM Elements
+        const slideContainer = document.getElementById('slideContainer');
+        const slideCounter = document.getElementById('slideCounter');
+        const progressBar = document.getElementById('progressBar');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('dotsContainer');
+        const drawer = document.getElementById('drawer');
+        const drawerList = document.getElementById('drawerList');
+
+        // Font scaling lookup
+        const fontClasses = {
+            qTitle: ['text-base md:text-lg', 'text-lg md:text-xl', 'text-xl md:text-2xl', 'text-2xl md:text-3xl'],
+            subHead: ['text-xs md:text-sm', 'text-sm md:text-base', 'text-base md:text-lg', 'text-lg md:text-xl'],
+            bodyText: ['text-xs md:text-sm', 'text-sm md:text-base', 'text-base md:text-lg', 'text-lg md:text-xl']
+        };
+
+        // Initialize Slideshow
+        function init() {
+            renderSlide();
+            renderDots();
+            renderDrawerItems();
+            updateProgress();
+            setupTouchSwipe();
+
+            window.onbeforeunload = () => {
+                if (speechSynth) speechSynth.cancel();
+            };
+        }
+
+        // Render Slide Content
+        function renderSlide() {
+            stopSpeech(); // Stop speech on slide change
+
+            const data = slidesData[currentIndex];
+            slideContainer.className = "w-full slide-enter";
+
+            if (data.type === 'cover') {
+                // SLIDE 0: Cover Slide with Big Circular Image
+                slideContainer.innerHTML = `
+                    <div class="glass-card rounded-3xl p-6 md:p-8 text-center flex flex-col items-center justify-center min-h-[70vh] border-2 border-amber-300/60 shadow-xl relative overflow-hidden">
+                        
+                        <!-- Badge -->
+                        <div class="inline-block glass-badge px-8 py-2 rounded-full text-sm md:text-base font-bold mb-8 shadow-sm">
+                            ${data.badge}
+                        </div>
+
+                        <!-- Big Circular Author Image (w-72 h-72 md:w-80 md:h-80) -->
+                        <div class="mb-5 relative group">
+                            <div class="w-72 h-72 md:w-80 md:h-80 rounded-full p-1.5 bg-gradient-to-tr from-amber-400 to-red-500 shadow-xl flex items-center justify-center overflow-hidden">
+                                <img src="${data.imgSrc}" alt="${data.authorName}" class="w-full h-full object-cover rounded-full bg-slate-200">
+                            </div>
+                            <span class="absolute bottom-2 right-4 bg-red-600 text-white px-3 py-2 rounded-full font-bold shadow-md" style="font-size: 18px;">
+                                ${data.authorName}
+                            </span>
+                        </div>
+
+                        <!-- Main Title -->
+                        <h2 class="heading-font text-3xl md:text-5xl font-extrabold text-amber-700 mb-3 tracking-wide drop-shadow-sm leading-tight">
+                            ${data.title}
+                        </h2>
+
+                        <!-- Subtitle -->
+                        <p class="text-sm md:text-lg font-semibold text-slate-700 mb-6 max-w-2xl leading-relaxed">
+                            ${data.subtitle}
+                        </p>
+
+                        <!-- Feature Cards Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-2xl mb-6 text-left">
+                            ${data.cards.map(c => `
+                                <div class="bg-white/90 p-3 rounded-2xl border border-slate-200 shadow-sm flex items-center space-x-3 transition hover:shadow-md">
+                                    <span class="text-2xl">${c.icon}</span>
+                                    <div>
+                                        <div class="${c.titleColor} font-bold text-xs md:text-sm leading-tight">${c.title}</div>
+                                        <div class="text-[11px] text-slate-500 font-medium mt-0.5">${c.desc}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <!-- Action Start Button -->
+                        <button onclick="goToSlide(1)" class="glass-btn px-7 py-3 rounded-2xl text-amber-900 font-extrabold text-lg md:text-xl shadow-lg flex items-center gap-3 group">
+                            <span>${data.btnText}</span>
+                        </button>
+                    </div>
+                `;
+            } else {
+                // NORMAL QA SLIDES (1 to 5)
+                const fontIdx = currentFontSizeOffset + 1;
+
+                let answerHTML = data.sections.map((sec) => `
+                    <div class="light-subcard p-4 md:p-5 rounded-2xl relative transition-all duration-200 hover:shadow-md">
+                        <h4 class="font-bold text-red-700 mb-2 flex items-start gap-2 ${fontClasses.subHead[fontIdx]}">
+                            <span class="inline-block mt-0.5 text-red-600">•</span>
+                            <span>${sec.title}</span>
+                        </h4>
+                        <p class="text-slate-800 font-medium leading-relaxed ${fontClasses.bodyText[fontIdx]} pl-4">
+                            ${sec.text}
+                        </p>
+                    </div>
+                `).join('');
+
+                slideContainer.innerHTML = `
+                    <div class="glass-card rounded-3xl p-5 md:p-8 relative overflow-hidden">
+                        
+                        <!-- Header Bar inside Slide -->
+                        <div class="flex flex-wrap items-center justify-between gap-3 mb-5 pb-4 border-b border-slate-200">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">${data.badgeIcon}</span>
+                                <span class="px-4 py-1.5 rounded-xl font-extrabold text-red-700 bg-red-50 border border-red-200 text-sm tracking-wide">
+                                    ${data.qNum}
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <button onclick="toggleSpeech()" class="px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition">
+                                    <i class="fa-solid ${isSpeaking ? 'fa-pause' : 'fa-volume-high'}" id="cardAudioIcon"></i>
+                                    <span id="cardAudioText">${isSpeaking ? 'रुकें' : 'सुनें'}</span>
+                                </button>
+
+                                <div class="px-3.5 py-1.5 rounded-xl font-bold text-xs md:text-sm bg-blue-50 text-blue-800 border border-blue-200">
+                                    <i class="fa-solid fa-award mr-1"></i>अंक: ${data.marks}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question Box -->
+                        <div class="mb-5 bg-slate-50 p-5 md:p-6 rounded-2xl border border-slate-200 shadow-inner">
+                            <h2 class="font-extrabold text-slate-900 leading-snug whitespace-pre-line ${fontClasses.qTitle[fontIdx]}">
+                                ${data.question}
+                            </h2>
+                        </div>
+
+                        <!-- Answer Heading -->
+                        <div class="flex items-center gap-2 mb-3 text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wider">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-600"></span>
+                            <span>उत्तर (विस्तार से):</span>
+                        </div>
+
+                        <!-- Answer Sub-cards -->
+                        <div class="space-y-4 max-h-[44vh] overflow-y-auto pr-2 custom-scroll">
+                            ${answerHTML}
+                        </div>
+
+                    </div>
+                `;
+            }
+
+            // Update Counter & Controls
+            slideCounter.innerText = `स्लाइड ${currentIndex + 1} / ${slidesData.length}`;
+            prevBtn.disabled = currentIndex === 0;
+
+            if (currentIndex === slidesData.length - 1) {
+                nextBtn.innerHTML = `पुनः देखें <i class="fa-solid fa-rotate-right text-xs"></i>`;
+            } else {
+                nextBtn.innerHTML = `आगे <i class="fa-solid fa-chevron-right text-xs"></i>`;
+            }
+
+            updateDots();
+            updateProgress();
+        }
+
+        // Text-To-Speech Engine (Hindi hi-IN)
+        function toggleSpeech() {
+            if (!('speechSynthesis' in window)) {
+                showToast("आपका ब्राउज़र वॉइस वाचन का समर्थन नहीं करता है।");
+                return;
+            }
+
+            if (isSpeaking) {
+                if (isSpeechPaused) {
+                    speechSynth.resume();
+                    isSpeechPaused = false;
+                    updateSpeechUI(true, "पढ़ रहे हैं...");
+                } else {
+                    speechSynth.pause();
+                    isSpeechPaused = true;
+                    updateSpeechUI(true, "रुक गए हैं");
+                }
+            } else {
+                startSpeech();
+            }
+        }
+
+        function startSpeech() {
+            speechSynth.cancel();
+
+            const data = slidesData[currentIndex];
+            let fullText = "";
+
+            if (data.type === 'cover') {
+                fullText = `${data.title}. ${data.subtitle}. ${data.badge}. `;
+                data.cards.forEach(c => { fullText += `${c.title}, ${c.desc}. `; });
+            } else {
+                fullText = `${data.qNum}. ${data.question}. उत्तर: `;
+                data.sections.forEach(sec => {
+                    fullText += `${sec.title} ${sec.text}. `;
+                });
+            }
+
+            speechUtterance = new SpeechSynthesisUtterance(fullText);
+            speechUtterance.lang = 'hi-IN';
+            speechUtterance.rate = 0.95;
+            speechUtterance.pitch = 1.0;
+
+            const voices = speechSynth.getVoices();
+            const hindiVoice = voices.find(v => v.lang.includes('hi') || v.lang.includes('HI'));
+            if (hindiVoice) {
+                speechUtterance.voice = hindiVoice;
+            }
+
+            speechUtterance.onstart = () => {
+                isSpeaking = true;
+                isSpeechPaused = false;
+                updateSpeechUI(true, "सुन रहे हैं");
+            };
+
+            speechUtterance.onend = () => {
+                isSpeaking = false;
+                isSpeechPaused = false;
+                updateSpeechUI(false, "बोलकर सुनें");
+            };
+
+            speechUtterance.onerror = () => {
+                isSpeaking = false;
+                isSpeechPaused = false;
+                updateSpeechUI(false, "बोलकर सुनें");
+            };
+
+            speechSynth.speak(speechUtterance);
+        }
+
+        function stopSpeech() {
+            if (speechSynth) speechSynth.cancel();
+            isSpeaking = false;
+            isSpeechPaused = false;
+            updateSpeechUI(false, "बोलकर सुनें");
+        }
+
+        function updateSpeechUI(speaking, textLabel) {
+            const btnIcon = document.getElementById('speechBtnIcon');
+            const btnText = document.getElementById('speechBtnText');
+            const cardIcon = document.getElementById('cardAudioIcon');
+            const cardText = document.getElementById('cardAudioText');
+            const globalBtn = document.getElementById('globalSpeechBtn');
+
+            if (speaking && !isSpeechPaused) {
+                if (btnIcon) btnIcon.className = "fa-solid fa-pause text-red-600 animate-pulse";
+                if (btnText) btnText.innerText = "रोकें";
+                if (cardIcon) cardIcon.className = "fa-solid fa-pause";
+                if (cardText) cardText.innerText = "रोकें";
+                if (globalBtn) globalBtn.classList.add('speaking-pulse', 'border-red-500');
+            } else {
+                if (btnIcon) btnIcon.className = "fa-solid fa-volume-high text-red-600";
+                if (btnText) btnText.innerText = textLabel || "बोलकर सुनें";
+                if (cardIcon) cardIcon.className = "fa-solid fa-volume-high";
+                if (cardText) cardText.innerText = "सुनें";
+                if (globalBtn) globalBtn.classList.remove('speaking-pulse', 'border-red-500');
+            }
+        }
+
+        // Navigation Functions
+        function nextSlide() {
+            if (currentIndex < slidesData.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // Loop back to Cover
+            }
+            renderSlide();
+        }
+
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderSlide();
+            }
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            renderSlide();
+            if (!drawer.classList.contains('pointer-events-none')) {
+                toggleDrawer();
+            }
+        }
+
+        // Render Dots
+        function renderDots() {
+            dotsContainer.innerHTML = slidesData.map((_, idx) => `
+                <button onclick="goToSlide(${idx})" title="${idx === 0 ? 'कवर पेज' : 'स्लाइड ' + idx}" class="w-3 h-3 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-red-600 w-8 shadow-sm' : 'bg-slate-300 hover:bg-slate-400'}">
+                </button>
+            `).join('');
+        }
+
+        function updateDots() {
+            renderDots();
+        }
+
+        function updateProgress() {
+            const percentage = ((currentIndex + 1) / slidesData.length) * 100;
+            progressBar.style.width = `${percentage}%`;
+        }
+
+        // Drawer Menu Render
+        function renderDrawerItems() {
+            drawerList.innerHTML = slidesData.map((item, idx) => {
+                if (item.type === 'cover') {
+                    return `
+                        <div onclick="goToSlide(0)" class="p-3.5 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-200 cursor-pointer transition flex items-center gap-3 group">
+                            <span class="px-2.5 py-1 rounded-lg bg-amber-200 text-amber-900 font-extrabold text-xs shrink-0">
+                                कवर
+                            </span>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-xs md:text-sm font-bold text-amber-900 group-hover:text-amber-950">
+                                    'मियाँ नसीरुद्दीन' - मुख्य पृष्ठ
+                                </p>
+                            </div>
+                        </div>
+                    `;
+                }
+                return `
+                    <div onclick="goToSlide(${idx})" class="p-3.5 rounded-xl bg-slate-50 hover:bg-red-50/60 border border-slate-200 cursor-pointer transition flex items-start gap-3 group">
+                        <span class="px-2.5 py-1 rounded-lg bg-red-100 text-red-700 font-extrabold text-xs shrink-0 border border-red-200">
+                            ${idx}
+                        </span>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-xs md:text-sm font-bold text-slate-800 group-hover:text-red-700 line-clamp-2 leading-snug">
+                                ${item.qNum}
+                            </p>
+                            <p class="text-[11px] text-slate-500 font-semibold mt-1">
+                                प्रकार: ${item.marks}
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function toggleDrawer() {
+            if (drawer.classList.contains('pointer-events-none')) {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        // Font Resize
+        function changeFontSize(delta) {
+            const newOffset = currentFontSizeOffset + delta;
+            if (newOffset >= -1 && newOffset <= 2) {
+                currentFontSizeOffset = newOffset;
+                renderSlide();
+                const labels = { '-1': 'छोटा', '0': 'सामान्य', '1': 'बड़ा', '2': 'बहुत बड़ा' };
+                showToast(`अक्षर आकार: ${labels[newOffset]}`);
+            }
+        }
+
+        // Auto-Play Feature
+        function toggleAutoplay() {
+            const playIcon = document.getElementById('playIcon');
+            const playText = document.getElementById('playText');
+            const autoplayBtn = document.getElementById('autoplayBtn');
+
+            if (isAutoplay) {
+                clearInterval(autoplayInterval);
+                isAutoplay = false;
+                playIcon.className = "fa-solid fa-play text-emerald-600";
+                playText.innerText = "ऑटो प्ले";
+                autoplayBtn.classList.remove('border-emerald-500', 'bg-emerald-50');
+                showToast("ऑटो प्ले बंद किया गया");
+            } else {
+                isAutoplay = true;
+                playIcon.className = "fa-solid fa-pause text-amber-600";
+                playText.innerText = "रुकें";
+                autoplayBtn.classList.add('border-emerald-500', 'bg-emerald-50');
+                showToast("ऑटो प्ले चालू (प्रत्येक 8 सेकंड)");
+                autoplayInterval = setInterval(() => {
+                    nextSlide();
+                }, 8000);
+            }
+        }
+
+        // Fullscreen Toggle
+        function toggleFullscreen() {
+            const icon = document.getElementById('fullscreenIcon');
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(() => {
+                    showToast("फुलस्क्रीन मोड समर्थित नहीं है");
+                });
+                icon.className = "fa-solid fa-compress";
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                    icon.className = "fa-solid fa-expand";
+                }
+            }
+        }
+
+        // Copy Text Function
+        function copyCurrentSlideText() {
+            const data = slidesData[currentIndex];
+            let textToCopy = "";
+
+            if (data.type === 'cover') {
+                textToCopy = `${data.title}\n${data.subtitle}\n${data.badge}\n`;
+            } else {
+                textToCopy = `${data.qNum} (${data.marks})\n${data.question}\n\n`;
+                textToCopy += `उत्तर:\n`;
+                data.sections.forEach(sec => {
+                    textToCopy += `\n${sec.title}\n${sec.text}\n`;
+                });
+            }
+
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast("सामग्री कॉपी हो गई है!");
+            } catch (err) {
+                showToast("कॉपी करने में असमर्थ");
+            }
+            document.body.removeChild(textarea);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2400);
+        }
+
+        // Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'f' || e.key === 'F') {
+                toggleFullscreen();
+            } else if (e.key === 'Escape') {
+                if (!drawer.classList.contains('pointer-events-none')) {
+                    toggleDrawer();
+                }
+            }
+        });
+
+        // Touch Swipe
+        function setupTouchSwipe() {
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    nextSlide();
+                }
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    prevSlide();
+                }
+            }
+        }
+
+        // Pre-fetch voices
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = () => {
+                window.speechSynthesis.getVoices();
+            };
+        }
+
+        // Start Application
+        window.onload = init;
+    </script>
+</body>
+</html>

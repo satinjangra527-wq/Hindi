@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 11 Hindi NCERT - Central Control Hub</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Yatra+One&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        display: ['"Outfit"', 'sans-serif'],
+                        devanagari: ['"Tiro Devanagari Hindi"', '"Hind"', 'serif'],
+                        devhead: ['"Yatra One"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#faf7f2',
+                            100: '#f4ede2',
+                            500: '#b45309',
+                            600: '#92400e',
+                            700: '#78350f',
+                            900: '#451a03',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-body: #faf7f5;
+            --bg-card: #ffffff;
+            --accent-main: #2563eb;
+            --accent-light: #eff6ff;
+            --border-subtle: #e2e8f0;
+            --text-title: #0f172a;
+        }
+
+        .theme-pearl {
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --accent-main: #3b82f6;
+            --accent-light: #eff6ff;
+            --border-subtle: #e2e8f0;
+            --text-title: #0f172a;
+        }
+        .theme-latte {
+            --bg-body: #faf7f2;
+            --bg-card: #ffffff;
+            --accent-main: #d97706;
+            --accent-light: #fef3c7;
+            --border-subtle: #ede3d2;
+            --text-title: #451a03;
+        }
+        .theme-mint {
+            --bg-body: #f4fbf7;
+            --bg-card: #ffffff;
+            --accent-main: #10b981;
+            --accent-light: #ecfdf5;
+            --border-subtle: #d1fae5;
+            --text-title: #064e3b;
+        }
+        .theme-rose {
+            --bg-body: #fff5f7;
+            --bg-card: #ffffff;
+            --accent-main: #f43f5e;
+            --accent-light: #ffe4e6;
+            --border-subtle: #fecdd3;
+            --text-title: #4c0519;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
+
+        .hub-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hub-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent-main);
+        }
+
+        .hindi-text {
+            font-family: 'Tiro Devanagari Hindi', 'Hind', serif;
+            line-height: 1.6;
+        }
+        .hindi-head {
+            font-family: 'Yatra One', serif;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.02);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- TOP HEADER -->
+    <header class="sticky top-0 z-40 glass-header border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+            
+            <!-- Brand & Title -->
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white text-xl shadow-md shadow-blue-500/20 font-bold shrink-0">
+                    🏛️
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 font-display">NCERT Class 11</span>
+                        <span class="text-xs text-slate-400 font-medium">• Central Dashboard</span>
+                    </div>
+                    <h1 class="text-lg sm:text-xl font-bold font-display text-slate-900 tracking-tight leading-none mt-0.5">
+                        Hindi Literature Control Hub
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Header Controls & Tools -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <div class="hidden sm:flex items-center p-1 bg-slate-100 rounded-xl border border-slate-200">
+                    <button onclick="setTheme('pearl')" title="Pearl White Theme" class="w-6 h-6 rounded-lg bg-blue-500 hover:scale-105 transition-transform"></button>
+                    <button onclick="setTheme('latte')" title="Cream Latte Theme" class="w-6 h-6 rounded-lg bg-amber-600 hover:scale-105 transition-transform ml-1"></button>
+                    <button onclick="setTheme('mint')" title="Soft Mint Theme" class="w-6 h-6 rounded-lg bg-emerald-500 hover:scale-105 transition-transform ml-1"></button>
+                    <button onclick="setTheme('rose')" title="Rose Quartz Theme" class="w-6 h-6 rounded-lg bg-rose-500 hover:scale-105 transition-transform ml-1"></button>
+                </div>
+
+                <button onclick="pickRandomChapter()" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold text-xs shadow-md shadow-blue-500/20 flex items-center gap-1.5 transition-all">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline font-display">Random Revision</span>
+                </button>
+
+                <button onclick="toggleBackupModal()" title="Export / Backup Progress" class="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 transition-colors">
+                    <i data-lucide="database" class="w-4.5 h-4.5"></i>
+                </button>
+
+                <button onclick="toggleJournalDrawer()" class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 font-semibold text-xs shadow-sm flex items-center gap-1.5 transition-all">
+                    <i data-lucide="notebook-pen" class="w-4 h-4 text-blue-600"></i>
+                    <span class="hidden sm:inline font-display">Study Journal</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full space-y-6">
+
+        <!-- STATS CARDS -->
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="hub-card p-4 sm:p-5 rounded-2xl">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider font-display">Total Chapters</span>
+                    <span class="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-sm font-bold">📚</span>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-2" id="statTotal">23</h3>
+                <p class="text-[11px] text-slate-400 font-medium mt-1">3 Prescribed Books / Sections</p>
+            </div>
+
+            <div class="hub-card p-4 sm:p-5 rounded-2xl">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider font-display">Completed</span>
+                    <span class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm font-bold">✅</span>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-bold font-display text-emerald-600 mt-2" id="statCompleted">0 / 23</h3>
+                <div class="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden">
+                    <div id="statProgressBar" class="bg-emerald-500 h-full w-0 transition-all duration-500"></div>
+                </div>
+            </div>
+
+            <div class="hub-card p-4 sm:p-5 rounded-2xl">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider font-display">Bookmarked</span>
+                    <span class="w-8 h-8 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-sm font-bold">⭐</span>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-bold font-display text-amber-600 mt-2" id="statBookmarks">0</h3>
+                <p class="text-[11px] text-slate-400 font-medium mt-1">Saved for Quick Revision</p>
+            </div>
+
+            <div class="hub-card p-4 sm:p-5 rounded-2xl">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider font-display">Mastery Progress</span>
+                    <span class="w-8 h-8 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-sm font-bold">🎯</span>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-bold font-display text-indigo-600 mt-2" id="statPercent">0%</h3>
+                <p class="text-[11px] text-slate-400 font-medium mt-1" id="statEstTime">-- Est. Reading Remaining</p>
+            </div>
+        </section>
+
+        <!-- FILTERS, VIEWS & SEARCH BAR -->
+        <section class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm">
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 scrollbar-none font-display">
+                <button onclick="setFilter('all')" id="tab-all" class="filter-tab px-3.5 py-2 rounded-xl text-xs font-bold transition-all shrink-0 bg-slate-100 text-slate-700">
+                    All Chapters (<span id="cnt-all">23</span>)
+                </button>
+                <button onclick="setFilter('gadhya')" id="tab-gadhya" class="filter-tab px-3.5 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 bg-slate-100 hover:bg-slate-200 text-slate-700">
+                    Aroh Prose (<span id="cnt-gadhya">9</span>)
+                </button>
+                <button onclick="setFilter('kavya')" id="tab-kavya" class="filter-tab px-3.5 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 bg-slate-100 hover:bg-slate-200 text-slate-700">
+                    Aroh Poetry (<span id="cnt-kavya">10</span>)
+                </button>
+                <button onclick="setFilter('vitan')" id="tab-vitan" class="filter-tab px-3.5 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 bg-slate-100 hover:bg-slate-200 text-slate-700">
+                    Vitan Supplementary (<span id="cnt-vitan">4</span>)
+                </button>
+                <button onclick="setFilter('bookmarked')" id="tab-bookmarked" class="filter-tab px-3.5 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 bg-slate-100 hover:bg-slate-200 text-amber-700">
+                    Favorites ⭐ (<span id="cnt-bookmarked">0</span>)
+                </button>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="relative flex-1 sm:w-64">
+                    <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="searchInput" placeholder="Search by title or author..." 
+                        class="w-full pl-9 pr-8 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all">
+                    <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
+                        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <div class="flex items-center p-1 bg-slate-100 rounded-xl border border-slate-200 shrink-0">
+                    <button onclick="setViewMode('grid')" id="btn-view-grid" title="Grid View" class="p-1.5 rounded-lg text-slate-500 hover:text-slate-800">
+                        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                    </button>
+                    <button onclick="setViewMode('list')" id="btn-view-list" title="Compact List View" class="p-1.5 rounded-lg text-slate-500 hover:text-slate-800">
+                        <i data-lucide="list" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN CHAPTERS CONTAINER -->
+        <section id="chaptersContainer">
+            <!-- Dynamically populated Grid / List -->
+        </section>
+
+        <!-- EMPTY STATE -->
+        <div id="emptyState" class="hidden text-center py-16 bg-white rounded-3xl border border-slate-200 p-8">
+            <div class="w-16 h-16 rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center text-2xl mx-auto mb-3">🔍</div>
+            <h3 class="text-base font-bold font-display text-slate-800">No Chapters Found</h3>
+            <p class="text-xs text-slate-500 mt-1">Try adjusting your search query or filter selection.</p>
+            <button onclick="clearSearch()" class="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl shadow-sm transition-all font-display">
+                Clear Filters & Search
+            </button>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto border-t border-slate-200/80 bg-white py-6 text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <span class="font-bold font-display text-slate-800">Class 11 Hindi NCERT Dashboard</span>
+                <span>• Centralized Interactive Hub</span>
+            </div>
+            <p class="text-slate-400">Prescribed Texts: आरोह (भाग - 1) & वितान (भाग - 1)</p>
+        </div>
+    </footer>
+
+    <!-- STUDY JOURNAL SIDE DRAWER -->
+    <div id="journalDrawer" class="fixed inset-y-0 right-0 w-full sm:w-96 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 border-l border-slate-200 flex flex-col">
+        <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50/80">
+            <div class="flex items-center gap-2">
+                <i data-lucide="notebook-pen" class="w-5 h-5 text-blue-600"></i>
+                <div>
+                    <h3 class="font-bold font-display text-sm text-slate-900">Study Notes Journal</h3>
+                    <p class="text-[11px] text-slate-500">Save notes per chapter (stored locally)</p>
+                </div>
+            </div>
+            <button onclick="toggleJournalDrawer()" class="p-1.5 rounded-lg hover:bg-slate-200/60 text-slate-500">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+        </div>
+
+        <div class="p-4 flex-1 overflow-y-auto space-y-4">
+            <div>
+                <!-- Custom Div-based Premium Chapter Selector -->
+                <div class="relative font-display" id="customDropdownContainer">
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Select Chapter (Premium List):</label>
+                    
+                    <div onclick="toggleCustomDropdown()" id="dropdownTrigger" class="w-full text-xs p-3 rounded-xl border border-slate-200 bg-white hover:border-blue-500 cursor-pointer flex items-center justify-between shadow-sm transition-all">
+                        <div class="flex items-center gap-2 truncate">
+                            <span id="selectedEmoji" class="text-base">📖</span>
+                            <span id="selectedText" class="font-devanagari font-semibold text-slate-800 truncate">अध्याय चुनें...</span>
+                        </div>
+                        <i data-lucide="chevron-down" id="dropdownArrow" class="w-4 h-4 text-slate-400 transition-transform duration-300 shrink-0"></i>
+                    </div>
+
+                    <div id="dropdownPanel" class="absolute z-50 left-0 right-0 mt-2 bg-white/95 backdrop-blur-xl border border-slate-200/80 rounded-2xl shadow-2xl overflow-hidden hidden transform origin-top transition-all duration-200 scale-95 opacity-0">
+                        <div class="p-2.5 border-b border-slate-100 bg-slate-50/50">
+                            <div class="relative">
+                                <i data-lucide="search" class="w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                                <input type="text" id="dropdownSearchInput" oninput="filterDropdownOptions(this.value)" placeholder="चैप्टर खोजें..." 
+                                    class="w-full pl-8 pr-3 py-1.5 text-xs bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20">
+                            </div>
+                        </div>
+
+                        <div id="dropdownOptionsList" class="max-h-60 overflow-y-auto p-1.5 space-y-1">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-1 flex flex-col">
+                <label class="block text-xs font-semibold font-display text-slate-700 mb-1">Chapter Summary & Revision Notes:</label>
+                <textarea id="journalNotesArea" rows="14" placeholder="Write down key takeaways, difficult words, theme analysis, or exam points here..." 
+                    class="w-full p-3.5 text-xs hindi-text border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 bg-slate-50/50 resize-none leading-relaxed"></textarea>
+            </div>
+        </div>
+
+        <div class="p-4 border-t border-slate-200 bg-slate-50 flex items-center justify-between">
+            <span id="journalStatus" class="text-[11px] font-semibold text-emerald-600 opacity-0 transition-opacity">
+                ✓ Saved successfully
+            </span>
+            <button onclick="saveJournalNote()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs font-display rounded-xl shadow-sm transition-all flex items-center gap-1.5">
+                <i data-lucide="save" class="w-4 h-4"></i> Save Note
+            </button>
+        </div>
+    </div>
+
+    <!-- MODAL FOR CHAPTER DETAILS -->
+    <div id="chapterModal" class="fixed inset-0 z-50 hidden bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-in fade-in zoom-in duration-150">
+            <div class="p-6 border-b border-slate-100 flex items-start justify-between bg-gradient-to-r from-slate-50 to-white">
+                <div class="flex items-start gap-4">
+                    <span id="modalEmoji" class="text-3xl p-3 bg-white rounded-2xl shadow-sm border border-slate-200 shrink-0">📖</span>
+                    <div>
+                        <span id="modalBadge" class="px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-md bg-blue-100 text-blue-800 font-display">Aroh Prose</span>
+                        <h2 id="modalTitle" class="text-xl font-bold text-slate-900 hindi-text mt-1">अध्याय का नाम</h2>
+                        <p id="modalAuthor" class="text-xs text-slate-500 font-medium font-devanagari">लेखक/रचयिता: --</p>
+                    </div>
+                </div>
+                <button onclick="closeChapterModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-4 text-xs font-sans text-slate-600">
+                <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <span class="font-semibold text-slate-700 font-display">Reading Time:</span>
+                    <span id="modalEstMinutes" class="font-bold text-blue-600 font-display">~15 Mins</span>
+                </div>
+
+                <div>
+                    <h4 class="font-bold font-display text-slate-800 uppercase text-[11px] tracking-wider mb-1">Chapter Summary & Overview:</h4>
+                    <p id="modalDesc" class="hindi-text text-sm leading-relaxed text-slate-700 bg-slate-50/60 p-4 rounded-xl border border-slate-200/60">--</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold font-display text-slate-800 uppercase text-[11px] tracking-wider mb-1">HTML File Path:</h4>
+                    <div class="flex gap-2">
+                        <input type="text" id="modalFilePath" readonly class="w-full text-xs font-mono p-2.5 bg-slate-100 border border-slate-200 rounded-xl text-slate-700">
+                        <button onclick="copyFilePath()" class="px-3 py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold text-xs rounded-xl flex items-center gap-1 shrink-0 font-display">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 border-t border-slate-100 bg-slate-50 flex items-center justify-between">
+                <button onclick="toggleBookmarkFromModal()" id="modalBookmarkBtn" class="px-3.5 py-2 rounded-xl border border-slate-300 text-slate-700 text-xs font-bold font-display flex items-center gap-1.5 hover:bg-slate-100">
+                    <i data-lucide="star" class="w-4 h-4 text-amber-500"></i> Bookmark
+                </button>
+
+                <div class="flex items-center gap-2">
+                    <button onclick="closeChapterModal()" class="px-4 py-2 text-xs font-bold text-slate-600 hover:bg-slate-200/60 rounded-xl font-display">
+                        Close
+                    </button>
+                    <a id="modalOpenBtn" href="#" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold font-display rounded-xl shadow-md transition-all flex items-center gap-1.5">
+                        <span>Open HTML Chapter</span>
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BACKUP MODAL -->
+    <div id="backupModal" class="fixed inset-0 z-50 hidden bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl border border-slate-200 p-6 space-y-4 font-display">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h3 class="font-bold text-base text-slate-900 flex items-center gap-2">
+                    <i data-lucide="database" class="w-5 h-5 text-blue-600"></i> Data Management
+                </h3>
+                <button onclick="toggleBackupModal()" class="p-1 rounded-lg text-slate-400 hover:text-slate-600">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <p class="text-xs text-slate-500 leading-relaxed font-sans">
+                Export your study progress, completed status, bookmarks, and notes to a JSON file or import a backup.
+            </p>
+
+            <div class="space-y-2">
+                <button onclick="exportData()" class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-all">
+                    <i data-lucide="download" class="w-4 h-4"></i> Export Backup (JSON)
+                </button>
+
+                <label class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-all">
+                    <i data-lucide="upload" class="w-4 h-4"></i> Import Backup (JSON)
+                    <input type="file" id="importFileInput" onchange="importData(event)" accept=".json" class="hidden">
+                </label>
+            </div>
+
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+                <button onclick="resetAllProgress()" class="text-xs text-rose-600 font-semibold hover:underline">
+                    Reset All Progress
+                </button>
+                <button onclick="toggleBackupModal()" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-xl text-xs font-bold">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT APPLICATION LOGIC -->
+    <script>
+        const CHAPTERS_DATA = [
+            {
+                id: 'aroh-g-1',
+                bookSection: 'आरोह (भाग - 1) — गद्य खंड',
+                category: 'gadhya',
+                categoryLabelEn: 'Aroh Prose',
+                chapterNo: 1,
+                title: 'अध्याय 1: नमक का दारोगा',
+                author: 'प्रेमचंद',
+                emoji: '⚖️',
+                estMinutes: 20,
+                desc: 'सत्यनिष्ठा, कर्तव्यपरायणता और धर्म की अधर्म पर विजय को दर्शाती मुंशी प्रेमचंद की कालजयी कहानी।',
+                file: 'गद्य-खंड-पाठ-1.html'
+            },
+            {
+                id: 'aroh-g-2',
+                bookSection: 'आरोह (भाग - 1) — गद्य खंड',
+                category: 'gadhya',
+                categoryLabelEn: 'Aroh Prose',
+                chapterNo: 2,
+                title: 'अध्याय 2: मियाँ नसीरुद्दीन',
+                author: 'कृष्णा सोबती',
+                emoji: '🥖',
+                estMinutes: 15,
+                desc: '५६ प्रकार की रोटियाँ बनाने में माहिर खानदानी नानबाई मियाँ नसीरुद्दीन का शब्दचित्र।',
+                file: 'गद्य खंड पाठ-2.html'
+            },
+            {
+                id: 'aroh-g-3',
+                bookSection: 'आरोह (भाग - 1) — गद्य खंड',
+                category: 'gadhya',
+                categoryLabelEn: 'Aroh Prose',
+                chapterNo: 3,
+                title: 'अध्याय 3: अप्पू के साथ ढाई साल',
+                author: 'सत्यजित राय',
+                emoji: '🎬',
+                estMinutes: 25,
+                desc: '\'पथेर पांचाली\' फ़िल्म के निर्माण काल की व्यावहारिक चुनौतियों का जीवंत संस्मरण।',
+                file: 'गद्य खंड पाठ-3.html'
+            },
+            {
+                id: 'aroh-g-4',
+                bookSection: 'आरोह (भाग - 1) — गद्य खंड',
+                category: 'gadhya',
+                categoryLabelEn: 'Aroh Prose',
+                chapterNo: 4,
+                title: 'अध्याय 4: विदाई-संभाषण',
+                author: 'बालमुकुंद गुप्त',
+                emoji: '📜',
+                estMinutes: 18,
+                desc: 'लॉर्ड कर्जन के दमनकारी शासन पर तीखा तथा व्यंग्यात्मक राजनीतिक निबंध।',
+                file: 'गद्य खंड पाठ-4.html'
+            },
+            {
+                id: 'aroh-g-5',
+                bookSection: 'आरोह (भाग - 1) — गद्य खंड',
+                category: 'gadhya',
+                categoryLabelEn: 'Aroh Prose',
+                chapterNo: 5,
+                title: 'अध्याय 5: गलता लोहा',
+                author: 'शेखर जोशी',
+                emoji: '🔨',
+                estMinutes: 22,
+                desc: 'जातिगत श्रेष्ठता के झूठे दंभ को तोड़कर मेधावी मोहन के श्रमिक बनने की मर्मस्पर्शी सामाजिक कथा।',
+                file: 'गद्य खंड पाठ-5.html'
+            },
+            {
+                id: 'aroh-g-6',
+                bookSection: 'आरोह (भाग - 1) — गद्य खंड',
+                category: 'gadhya',
+                categoryLabelEn: 'Aroh Prose',
+                chapterNo: 6,
+                title: 'अध्याय 6: रजनी',
+                author: 'मन्नू भंडारी',
+                emoji: '⚖️',
+                estMinutes: 20,
+                desc: 'शिक्षा क्षेत्र में जारी भ्रष्टाचार और ट्यूशन रैकेट के खिलाफ एक निडर महिला का आंदोलन।',
+                file: 'गद्य खंड पाठ-6.html'
+            },
+            {
+                id: 'aroh-g-7',
+                bookSection: 'आरोह (भाग - 1) — गद्य खंड',
+                category: 'gadhya',
+                categoryLabelEn: 'Aroh Prose',
+                chapterNo: 7,
+                title: 'अध्याय 7: जामुन का पेड़',
+                author: 'कृश्नचंदर',
+                emoji: '🌳',
+                estMinutes: 20,
+                desc: 'सरकारी दफ्तरों की संवेदनहीनता और लालफीताशाही पर तीखा हास्य-व्यंग्य।',
+                file: 'गद्य खंड पाठ-7.html'
+            },
+            {
+                id: 'aroh-g-8',
+                bookSection: 'आरोह (भाग - 1) — गद्य खंड',
+                category: 'gadhya',
+                categoryLabelEn: 'Aroh Prose',
+                chapterNo: 8,
+                title: 'अध्याय 8: भारत माता',
+                author: 'जवाहरलाल नेहरू',
+                emoji: '🇮🇳',
+                estMinutes: 15,
+                desc: 'देश की विविधता, राष्ट्रीयता और \'भारत माता\' शब्द के वास्तविक जन-केंद्रित अर्थ की व्याख्या।',
+                file: 'गद्य खंड पाठ-8.html'
+            },
+            {
+                id: 'aroh-k-1',
+                bookSection: 'आरोह (भाग - 1) — काव्य खंड',
+                category: 'kavya',
+                categoryLabelEn: 'Aroh Poetry',
+                chapterNo: 1,
+                title: 'अध्याय 1: हम तौ एक एक करि जांनां, संतों देखत जग बौराना',
+                author: 'कबीर',
+                emoji: '🔥',
+                estMinutes: 12,
+                desc: 'अद्वैत ब्रह्म की अनुभूति तथा धार्मिक बाह्याचारों व रूढ़ियों पर कबीरदास का निर्भीक प्रहार।',
+                file: 'काव्य खंड पाठ-1.html'
+            },
+            {
+                id: 'aroh-k-2',
+                bookSection: 'आरोह (भाग - 1) — काव्य खंड',
+                category: 'kavya',
+                categoryLabelEn: 'Aroh Poetry',
+                chapterNo: 2,
+                title: 'अध्याय 2: मेरे तो गिरधर गोपाल दूसरो न कोई, पग घुँघरू बाधि मीरां नाची',
+                author: 'मीरा',
+                emoji: '🪕',
+                estMinutes: 12,
+                desc: 'श्रीकृष्ण के प्रति अनन्य प्रेम, लोकलाज का त्याग और भक्ति भावना की तन्मयता।',
+                file: 'काव्य खंड पाठ-2.html'
+            },
+            {
+                id: 'aroh-k-3',
+                bookSection: 'आरोह (भाग - 1) — काव्य खंड',
+                category: 'kavya',
+                categoryLabelEn: 'Aroh Poetry',
+                chapterNo: 3,
+                title: 'अध्याय 3: घर की याद',
+                author: 'भवानीप्रसाद मिश्र',
+                emoji: '🌧️',
+                estMinutes: 18,
+                desc: '१९४२ के आंदोलन के दौरान जेल में बंद कवि की सावन के महीने में घर की भावुक यादें।',
+                file: 'काव्य खंड पाठ-3.html'
+            },
+            {
+                id: 'aroh-k-4',
+                bookSection: 'आरोह (भाग - 1) — काव्य खंड',
+                category: 'kavya',
+                categoryLabelEn: 'Aroh Poetry',
+                chapterNo: 4,
+                title: 'अध्याय 4: चंपा काले-काले अच्छर नहीं चीन्हती',
+                author: 'त्रिलोचन',
+                emoji: '🖊️',
+                estMinutes: 12,
+                desc: 'अक्षरों की अनभिज्ञता, ग्रामीण बालिका चंपा की निश्छल बातें और पलायन पर व्यंग्य।',
+                file: 'काव्य खंड पाठ-4.html'
+            },
+            {
+                id: 'aroh-k-5',
+                bookSection: 'आरोह (भाग - 1) — काव्य खंड',
+                category: 'kavya',
+                categoryLabelEn: 'Aroh Poetry',
+                chapterNo: 5,
+                title: 'अध्याय 5: गजल',
+                author: 'दुष्यंत कुमार',
+                emoji: '🕯️',
+                estMinutes: 15,
+                desc: 'राजनीतिक विसंगतियों एवं जन-समान्य की लाचारी के विरुद्ध क्रांति तथा चेतना की ग़ज़ल।',
+                file: 'काव्य खंड पाठ-5.html'
+            },
+            {
+                id: 'aroh-k-6',
+                bookSection: 'आरोह (भाग - 1) — काव्य खंड',
+                category: 'kavya',
+                categoryLabelEn: 'Aroh Poetry',
+                chapterNo: 6,
+                title: 'अध्याय 6: हे भूख! मत मचल, हे मेरे जूही के फूल जैसे ईश्वर',
+                author: 'अकक्का महादेवी',
+                emoji: '🌸',
+                estMinutes: 10,
+                desc: 'इंद्रिय-निग्रह तथा परमात्मा में स्वयं का सर्वस्व समर्पित करने की भक्ति-रचना।',
+                file: 'काव्य खंड पाठ-6.html'
+            },
+            {
+                id: 'aroh-k-7',
+                bookSection: 'आरोह (भाग - 1) — काव्य खंड',
+                category: 'kavya',
+                categoryLabelEn: 'Aroh Poetry',
+                chapterNo: 7,
+                title: 'अध्याय 7: सबसे खतरनाक',
+                author: 'पाश',
+                emoji: '⚠️',
+                estMinutes: 14,
+                desc: 'सपनों की मृत्यु, जड़ता और संवेदनहीनता को जीवन का सबसे खतरनाक पहलू बताने वाली कविता।',
+                file: 'काव्य खंड पाठ-7.html'
+            },
+            {
+                id: 'aroh-k-8',
+                bookSection: 'आरोह (भाग - 1) — काव्य खंड',
+                category: 'kavya',
+                categoryLabelEn: 'Aroh Poetry',
+                chapterNo: 8,
+                title: 'अध्याय 8: आओ, मिलकर बचाएँ',
+                author: 'निर्मला पुतुल',
+                emoji: '🌾',
+                estMinutes: 12,
+                desc: 'संथाली संस्कृति, प्राकृतिक परिवेश और अपनी अनमोल आंचलिक पहचान को बचाने का भावुक आह्वान।',
+                file: 'काव्य खंड पाठ-8.html'
+            },
+            {
+                id: 'vitan-1',
+                bookSection: 'वितान (भाग - 1) — पूरक पाठ्यपुस्तक',
+                category: 'vitan',
+                categoryLabelEn: 'Vitan Supplementary',
+                chapterNo: 1,
+                title: 'अध्याय 1: भारतीय गायिकाओं में बेजोड़ : लता मंगेशकर',
+                author: 'कुमार गंधर्व',
+                emoji: '🎶',
+                estMinutes: 25,
+                desc: 'स्वर कोकिला लता जी की गायकी, गानपन, सुरीलेपन एवं भारतीय संगीत में योगदान का विश्लेषणात्मक निबंध।',
+                file: 'वितान पाठ-1.html'
+            },
+            {
+                id: 'vitan-2',
+                bookSection: 'वितान (भाग - 1) — पूरक पाठ्यपुस्तक',
+                category: 'vitan',
+                categoryLabelEn: 'Vitan Supplementary',
+                chapterNo: 2,
+                title: 'अध्याय 2: राजस्थान की रजत बूँदें',
+                author: 'अनुपम मिश्र',
+                emoji: '💧',
+                estMinutes: 30,
+                desc: 'राजस्थान में जल संरक्षण की पारंपरिक प्रणाली व कुंई निर्माण का दस्तावेजीकरण।',
+                file: 'वितान पाठ-2.html'
+            },
+            {
+                id: 'vitan-3',
+                bookSection: 'वितान (भाग - 1) — पूरक पाठ्यपुस्तक',
+                category: 'vitan',
+                categoryLabelEn: 'Vitan Supplementary',
+                chapterNo: 3,
+                title: 'अध्याय 3: आलो-आँधारि',
+                author: 'बेबी हालदार',
+                emoji: '🕯️',
+                estMinutes: 35,
+                desc: 'घरेलू सहायिका के संघर्ष, आत्मसम्मान और लेखन के ज़रिए जीवन में रोशनी लाने की आत्मकथा।',
+                file: 'वितान पाठ-3.html'
+            },
+            {
+                id: 'vitan-4',
+                bookSection: 'वितान (भाग - 1) — पूरक पाठ्यपुस्तक',
+                category: 'vitan',
+                categoryLabelEn: 'Vitan Supplementary',
+                chapterNo: 4,
+                title: 'अध्याय 4: भारतीय कलाएँ',
+                author: 'एन.सी.ई.आर.टी.',
+                emoji: '🎨',
+                estMinutes: 25,
+                desc: 'संगीत, नृत्य, चित्रकला तथा लोक-कलाओं की समृद्ध भारतीय सांस्कृतिक परंपरा का विवरण।',
+                file: 'वितान पाठ-4.html'
+            }
+        ];
+
+        let appState = {
+            completed: JSON.parse(localStorage.getItem('ncert_h11_completed') || '[]'),
+            bookmarks: JSON.parse(localStorage.getItem('ncert_h11_bookmarks') || '[]'),
+            notes: JSON.parse(localStorage.getItem('ncert_h11_notes') || '{}'),
+            filter: localStorage.getItem('ncert_h11_filter') || 'all',
+            search: '',
+            viewMode: localStorage.getItem('ncert_h11_viewmode') || 'grid',
+            selectedModalId: null,
+            currentJournalId: CHAPTERS_DATA[0].id
+        };
+
+        // INITIALIZATION
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            
+            updateFilterActiveTab(appState.filter);
+            updateViewModeUI(appState.viewMode);
+
+            renderDashboard();
+            setupSearchListener();
+            setTheme(localStorage.getItem('ncert_h11_theme') || 'pearl');
+            
+            // Custom Dropdown init
+            populateCustomDropdown();
+            if(CHAPTERS_DATA.length > 0) {
+                selectCustomOption(appState.currentJournalId);
+            }
+        });
+
+        // MAIN RENDER ENGINE
+        function renderDashboard() {
+            const container = document.getElementById('chaptersContainer');
+            const emptyState = document.getElementById('emptyState');
+
+            let items = CHAPTERS_DATA.filter(ch => {
+                if (appState.filter === 'gadhya' && ch.category !== 'gadhya') return false;
+                if (appState.filter === 'kavya' && ch.category !== 'kavya') return false;
+                if (appState.filter === 'vitan' && ch.category !== 'vitan') return false;
+                if (appState.filter === 'bookmarked' && !appState.bookmarks.includes(ch.id)) return false;
+
+                if (appState.search) {
+                    const q = appState.search.toLowerCase();
+                    return ch.title.toLowerCase().includes(q) || ch.author.toLowerCase().includes(q) || ch.desc.toLowerCase().includes(q);
+                }
+                return true;
+            });
+
+            updateStats();
+
+            if (items.length === 0) {
+                container.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+
+            if (appState.viewMode === 'grid') {
+                container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5";
+                container.innerHTML = items.map(ch => renderGridCardHTML(ch)).join('');
+            } else {
+                container.className = "space-y-3";
+                container.innerHTML = items.map(ch => renderListCardHTML(ch)).join('');
+            }
+
+            lucide.createIcons();
+        }
+
+        function renderGridCardHTML(ch) {
+            const isCompleted = appState.completed.includes(ch.id);
+            const isBookmarked = appState.bookmarks.includes(ch.id);
+
+            return `
+                <div class="hub-card rounded-2xl p-5 flex flex-col justify-between ${isCompleted ? 'bg-emerald-50/20 border-emerald-200' : ''}">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold font-display uppercase tracking-wider px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 border border-slate-200 flex items-center gap-1">
+                                <span>${ch.emoji}</span> ${ch.categoryLabelEn}
+                            </span>
+                            <div class="flex items-center gap-1">
+                                <button onclick="toggleBookmark('${ch.id}')" title="Bookmark Chapter" class="p-1.5 rounded-lg hover:bg-amber-50 text-slate-300 transition-colors">
+                                    <i data-lucide="star" class="w-4 h-4 ${isBookmarked ? 'text-amber-500 fill-amber-500' : ''}"></i>
+                                </button>
+                                <button onclick="toggleCompleted('${ch.id}')" title="Mark Completed" class="p-1.5 rounded-lg transition-colors ${isCompleted ? 'text-emerald-600 bg-emerald-50' : 'text-slate-300 hover:text-emerald-600 hover:bg-slate-50'}">
+                                    <i data-lucide="${isCompleted ? 'check-circle-2' : 'circle'}" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <span class="text-[11px] font-bold font-devanagari text-slate-400 block mb-1">${ch.bookSection}</span>
+                        <h3 onclick="openChapterModal('${ch.id}')" class="text-base sm:text-lg font-bold hindi-text text-slate-900 cursor-pointer hover:text-blue-600 transition-colors leading-snug">
+                            ${ch.title}
+                        </h3>
+
+                        <div class="mt-2 flex items-center gap-1.5">
+                            <span class="text-[10px] uppercase font-bold font-display px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">Author</span>
+                            <span class="text-xs font-semibold font-devanagari text-slate-700">${ch.author}</span>
+                        </div>
+
+                        <p class="text-xs hindi-text text-slate-500 mt-3 line-clamp-2 leading-relaxed">${ch.desc}</p>
+                    </div>
+
+                    <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-[11px] font-medium font-display text-slate-400 flex items-center gap-1">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-400"></i> ~${ch.estMinutes} mins
+                        </span>
+
+                        <div class="flex items-center gap-1.5">
+                            <button onclick="openJournalFor('${ch.id}')" title="Study Notes" class="p-2 rounded-xl text-slate-500 hover:bg-slate-100">
+                                <i data-lucide="notebook-pen" class="w-4 h-4"></i>
+                            </button>
+                            <button onclick="openChapterModal('${ch.id}')" class="px-3.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs font-display shadow-sm transition-all flex items-center gap-1">
+                                <span>Open</span>
+                                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderListCardHTML(ch) {
+            const isCompleted = appState.completed.includes(ch.id);
+            const isBookmarked = appState.bookmarks.includes(ch.id);
+
+            return `
+                <div class="hub-card rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${isCompleted ? 'bg-emerald-50/20 border-emerald-200' : ''}">
+                    <div class="flex items-start sm:items-center gap-3">
+                        <button onclick="toggleCompleted('${ch.id}')" class="mt-1 sm:mt-0 p-1.5 rounded-lg shrink-0 ${isCompleted ? 'text-emerald-600 bg-emerald-50' : 'text-slate-300 hover:text-emerald-600'}">
+                            <i data-lucide="${isCompleted ? 'check-circle-2' : 'circle'}" class="w-5 h-5"></i>
+                        </button>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] font-bold font-display uppercase px-2 py-0.5 rounded bg-slate-100 text-slate-600">${ch.categoryLabelEn}</span>
+                                <span class="text-[11px] font-devanagari text-slate-400">${ch.author}</span>
+                            </div>
+                            <h3 onclick="openChapterModal('${ch.id}')" class="text-base font-bold hindi-text text-slate-900 hover:text-blue-600 cursor-pointer transition-colors mt-0.5">
+                                ${ch.title}
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-0 border-slate-100">
+                        <span class="text-xs font-display text-slate-400">~${ch.estMinutes} mins</span>
+                        <div class="flex items-center gap-1">
+                            <button onclick="toggleBookmark('${ch.id}')" class="p-1.5 rounded-lg text-slate-300 hover:bg-slate-100">
+                                <i data-lucide="star" class="w-4 h-4 ${isBookmarked ? 'text-amber-500 fill-amber-500' : ''}"></i>
+                            </button>
+                            <button onclick="openJournalFor('${ch.id}')" class="p-1.5 rounded-lg text-slate-500 hover:bg-slate-100">
+                                <i data-lucide="notebook-pen" class="w-4 h-4"></i>
+                            </button>
+                            <button onclick="openChapterModal('${ch.id}')" class="px-3 py-1.5 rounded-xl bg-slate-900 text-white font-semibold text-xs font-display hover:bg-slate-800">
+                                Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function updateStats() {
+            const total = CHAPTERS_DATA.length;
+            const completedCount = appState.completed.length;
+            const bookmarkCount = appState.bookmarks.length;
+            const percent = Math.round((completedCount / total) * 100);
+
+            document.getElementById('statTotal').innerText = total;
+            document.getElementById('statCompleted').innerText = `${completedCount} / ${total}`;
+            document.getElementById('statBookmarks').innerText = bookmarkCount;
+            document.getElementById('statPercent').innerText = `${percent}%`;
+            document.getElementById('statProgressBar').style.width = `${percent}%`;
+
+            const unread = CHAPTERS_DATA.filter(c => !appState.completed.includes(c.id));
+            const remainingMins = unread.reduce((acc, curr) => acc + curr.estMinutes, 0);
+            const hrs = Math.floor(remainingMins / 60);
+            const mins = remainingMins % 60;
+            document.getElementById('statEstTime').innerText = hrs > 0 ? `~${hrs}h ${mins}m Remaining` : `~${mins}m Remaining`;
+
+            document.getElementById('cnt-all').innerText = total;
+            document.getElementById('cnt-gadhya').innerText = CHAPTERS_DATA.filter(c => c.category === 'gadhya').length;
+            document.getElementById('cnt-kavya').innerText = CHAPTERS_DATA.filter(c => c.category === 'kavya').length;
+            document.getElementById('cnt-vitan').innerText = CHAPTERS_DATA.filter(c => c.category === 'vitan').length;
+            document.getElementById('cnt-bookmarked').innerText = bookmarkCount;
+        }
+
+        function toggleCompleted(id) {
+            if (appState.completed.includes(id)) {
+                appState.completed = appState.completed.filter(i => i !== id);
+            } else {
+                appState.completed.push(id);
+                if (appState.completed.length === CHAPTERS_DATA.length) {
+                    confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+                }
+            }
+            localStorage.setItem('ncert_h11_completed', JSON.stringify(appState.completed));
+            renderDashboard();
+        }
+
+        function toggleBookmark(id) {
+            if (appState.bookmarks.includes(id)) {
+                appState.bookmarks = appState.bookmarks.filter(i => i !== id);
+            } else {
+                appState.bookmarks.push(id);
+            }
+            localStorage.setItem('ncert_h11_bookmarks', JSON.stringify(appState.bookmarks));
+            renderDashboard();
+        }
+
+        function setFilter(filterName) {
+            appState.filter = filterName;
+            localStorage.setItem('ncert_h11_filter', filterName);
+            updateFilterActiveTab(filterName);
+            renderDashboard();
+        }
+
+        function updateFilterActiveTab(filterName) {
+            document.querySelectorAll('.filter-tab').forEach(btn => {
+                btn.className = 'filter-tab px-3.5 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 bg-slate-100 hover:bg-slate-200 text-slate-700';
+            });
+            const activeBtn = document.getElementById(`tab-${filterName}`);
+            if (activeBtn) {
+                activeBtn.className = 'filter-tab active px-3.5 py-2 rounded-xl text-xs font-bold transition-all shrink-0 bg-slate-900 text-white shadow-sm';
+            }
+        }
+
+        function setViewMode(mode) {
+            appState.viewMode = mode;
+            localStorage.setItem('ncert_h11_viewmode', mode);
+            updateViewModeUI(mode);
+            renderDashboard();
+        }
+
+        function updateViewModeUI(mode) {
+            const gridBtn = document.getElementById('btn-view-grid');
+            const listBtn = document.getElementById('btn-view-list');
+
+            if (mode === 'grid') {
+                gridBtn.className = 'p-1.5 rounded-lg bg-white shadow-sm text-slate-800';
+                listBtn.className = 'p-1.5 rounded-lg text-slate-500 hover:text-slate-800';
+            } else {
+                listBtn.className = 'p-1.5 rounded-lg bg-white shadow-sm text-slate-800';
+                gridBtn.className = 'p-1.5 rounded-lg text-slate-500 hover:text-slate-800';
+            }
+        }
+
+        function setupSearchListener() {
+            const input = document.getElementById('searchInput');
+            const clearBtn = document.getElementById('clearSearchBtn');
+
+            input.addEventListener('input', (e) => {
+                appState.search = e.target.value.trim();
+                if (appState.search) {
+                    clearBtn.classList.remove('hidden');
+                } else {
+                    clearBtn.classList.add('hidden');
+                }
+                renderDashboard();
+            });
+        }
+
+        function clearSearch() {
+            const input = document.getElementById('searchInput');
+            input.value = '';
+            appState.search = '';
+            document.getElementById('clearSearchBtn').classList.add('hidden');
+            renderDashboard();
+        }
+
+        function openChapterModal(id) {
+            const ch = CHAPTERS_DATA.find(c => c.id === id);
+            if (!ch) return;
+
+            appState.selectedModalId = id;
+            document.getElementById('modalEmoji').innerText = ch.emoji;
+            document.getElementById('modalTitle').innerText = ch.title;
+            document.getElementById('modalAuthor').innerText = `लेखक/रचयिता: ${ch.author}`;
+            document.getElementById('modalBadge').innerText = ch.categoryLabelEn;
+            document.getElementById('modalEstMinutes').innerText = `~${ch.estMinutes} Minutes Read`;
+            document.getElementById('modalDesc').innerText = ch.desc;
+            document.getElementById('modalFilePath').value = ch.file;
+            
+            const openBtn = document.getElementById('modalOpenBtn');
+            openBtn.href = ch.file;
+
+            updateModalBookmarkBtn();
+            document.getElementById('chapterModal').classList.remove('hidden');
+        }
+
+        function closeChapterModal() {
+            document.getElementById('chapterModal').classList.add('hidden');
+        }
+
+        function toggleBookmarkFromModal() {
+            if (appState.selectedModalId) {
+                toggleBookmark(appState.selectedModalId);
+                updateModalBookmarkBtn();
+            }
+        }
+
+        function updateModalBookmarkBtn() {
+            const isBookmarked = appState.bookmarks.includes(appState.selectedModalId);
+            const btn = document.getElementById('modalBookmarkBtn');
+            if (isBookmarked) {
+                btn.className = 'px-3.5 py-2 rounded-xl border border-amber-300 bg-amber-50 text-amber-900 text-xs font-bold font-display flex items-center gap-1.5';
+                btn.innerHTML = `<i data-lucide="star" class="w-4 h-4 text-amber-500 fill-amber-500"></i> Bookmarked`;
+            } else {
+                btn.className = 'px-3.5 py-2 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-100 text-xs font-bold font-display flex items-center gap-1.5';
+                btn.innerHTML = `<i data-lucide="star" class="w-4 h-4 text-slate-400"></i> Bookmark`;
+            }
+            lucide.createIcons();
+        }
+
+        function copyFilePath() {
+            const input = document.getElementById('modalFilePath');
+            input.select();
+            input.setSelectionRange(0, 99999);
+            try {
+                document.execCommand('copy');
+                alert('File path copied to clipboard: ' + input.value);
+            } catch (err) {
+                navigator.clipboard.writeText(input.value);
+            }
+        }
+
+        function pickRandomChapter() {
+            const unread = CHAPTERS_DATA.filter(c => !appState.completed.includes(c.id));
+            const pool = unread.length > 0 ? unread : CHAPTERS_DATA;
+            const random = pool[Math.floor(Math.random() * pool.length)];
+            openChapterModal(random.id);
+        }
+
+        function toggleJournalDrawer() {
+            document.getElementById('journalDrawer').classList.toggle('translate-x-full');
+        }
+
+        // Custom Premium Dropdown Logic
+        function toggleCustomDropdown() {
+            const panel = document.getElementById('dropdownPanel');
+            const arrow = document.getElementById('dropdownArrow');
+            const isOpen = !panel.classList.contains('hidden');
+            
+            if (isOpen) {
+                panel.classList.add('scale-95', 'opacity-0');
+                arrow.classList.remove('rotate-180');
+                setTimeout(() => panel.classList.add('hidden'), 150);
+            } else {
+                panel.classList.remove('hidden');
+                setTimeout(() => {
+                    panel.classList.remove('scale-95', 'opacity-0');
+                    arrow.classList.add('rotate-180');
+                }, 10);
+                document.getElementById('dropdownSearchInput').focus();
+            }
+        }
+
+        function populateCustomDropdown(filterText = '') {
+            const listContainer = document.getElementById('dropdownOptionsList');
+            const filtered = CHAPTERS_DATA.filter(ch => 
+                ch.title.toLowerCase().includes(filterText.toLowerCase()) || 
+                ch.author.toLowerCase().includes(filterText.toLowerCase())
+            );
+
+            if (filtered.length === 0) {
+                listContainer.innerHTML = `<div class="p-3 text-center text-xs text-slate-400">कोई चैप्टर नहीं मिला</div>`;
+                return;
+            }
+
+            listContainer.innerHTML = filtered.map(ch => `
+                <div onclick="selectCustomOption('${ch.id}')" class="group flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/80 cursor-pointer transition-all border border-transparent hover:border-blue-100">
+                    <div class="flex items-center gap-2.5 truncate">
+                        <span class="w-7 h-7 rounded-lg bg-slate-100 group-hover:bg-white flex items-center justify-center text-sm shrink-0 shadow-sm transition-colors">${ch.emoji}</span>
+                        <div class="truncate">
+                            <p class="text-xs font-semibold font-devanagari text-slate-800 group-hover:text-blue-600 truncate">${ch.title}</p>
+                            <p class="text-[10px] text-slate-400 font-devanagari">${ch.author} • ${ch.categoryLabelEn}</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 group-hover:bg-blue-600 group-hover:text-white text-slate-500 transition-colors shrink-0">चुनें</span>
+                </div>
+            `).join('');
+        }
+
+        function selectCustomOption(id) {
+            const ch = CHAPTERS_DATA.find(c => c.id === id);
+            if (!ch) return;
+
+            appState.currentJournalId = id;
+            document.getElementById('selectedEmoji').innerText = ch.emoji;
+            document.getElementById('selectedText').innerText = ch.title;
+            
+            // Load note for this chapter
+            document.getElementById('journalNotesArea').value = appState.notes[id] || '';
+            
+            toggleCustomDropdown();
+        }
+
+        function openJournalFor(id) {
+            selectCustomOption(id);
+            document.getElementById('journalDrawer').classList.remove('translate-x-full');
+        }
+
+        function filterDropdownOptions(query) {
+            populateCustomDropdown(query);
+        }
+
+        function saveJournalNote() {
+            const id = appState.currentJournalId;
+            const text = document.getElementById('journalNotesArea').value;
+            appState.notes[id] = text;
+            localStorage.setItem('ncert_h11_notes', JSON.stringify(appState.notes));
+
+            const status = document.getElementById('journalStatus');
+            status.style.opacity = '1';
+            setTimeout(() => { status.style.opacity = '0'; }, 2000);
+        }
+
+        window.addEventListener('click', function(e) {
+            const container = document.getElementById('customDropdownContainer');
+            if (container && !container.contains(e.target)) {
+                const panel = document.getElementById('dropdownPanel');
+                const arrow = document.getElementById('dropdownArrow');
+                if (panel && !panel.classList.contains('hidden')) {
+                    panel.classList.add('scale-95', 'opacity-0');
+                    arrow.classList.remove('rotate-180');
+                    setTimeout(() => panel.classList.add('hidden'), 150);
+                }
+            }
+        });
+
+        function toggleBackupModal() {
+            document.getElementById('backupModal').classList.toggle('hidden');
+        }
+
+        function exportData() {
+            const blob = new Blob([JSON.stringify(appState, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `NCERT_Hindi_Class11_Backup_${new Date().toISOString().slice(0, 10)}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function importData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (data.completed) appState.completed = data.completed;
+                    if (data.bookmarks) appState.bookmarks = data.bookmarks;
+                    if (data.notes) appState.notes = data.notes;
+
+                    localStorage.setItem('ncert_h11_completed', JSON.stringify(appState.completed));
+                    localStorage.setItem('ncert_h11_bookmarks', JSON.stringify(appState.bookmarks));
+                    localStorage.setItem('ncert_h11_notes', JSON.stringify(appState.notes));
+
+                    renderDashboard();
+                    alert('Progress imported successfully!');
+                    toggleBackupModal();
+                } catch (err) {
+                    alert('Invalid JSON backup file.');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function resetAllProgress() {
+            if (confirm('Are you sure you want to reset all completed chapters, bookmarks, and saved notes?')) {
+                appState.completed = [];
+                appState.bookmarks = [];
+                appState.notes = {};
+                localStorage.removeItem('ncert_h11_completed');
+                localStorage.removeItem('ncert_h11_bookmarks');
+                localStorage.removeItem('ncert_h11_notes');
+                renderDashboard();
+                toggleBackupModal();
+            }
+        }
+
+        function setTheme(themeName) {
+            document.body.classList.remove('theme-pearl', 'theme-latte', 'theme-mint', 'theme-rose');
+            document.body.classList.add(`theme-${themeName}`);
+            localStorage.setItem('ncert_h11_theme', themeName);
+        }
+    </script>
+</body>
+</html>
